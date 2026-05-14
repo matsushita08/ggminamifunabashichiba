@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gold's Gym 南船橋千葉店 | あなたの悩みに合った運動、見つかります。</title>
-  <meta name="description" content="肩こり・ダイエット・体力低下…悩みに合った運動でスタートできる2週間体験3,300円。初心者大歓迎・サポート付き・自動入会なし。" />
+  <title>Gold's Gym 南船橋千葉店 | こんなに手厚いサポートが、ずっと無料？</title>
+  <meta name="description" content="まず2週間で、本気を確かめてください。無料サポート付き・自動入会なし・初心者大歓迎。2週間体験3,300円（通常6,600円）。" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
@@ -244,13 +244,15 @@
     }
 
     .hero-sub {
-      font-size: clamp(.88rem, 2.4vw, 1.05rem);
-      color: rgba(255,255,255,.75);
-      line-height: 1.7;
+      font-size: clamp(1rem, 2.6vw, 1.2rem);
+      color: rgba(255,255,255,.95);
+      line-height: 1.8;
       margin-bottom: 1.8rem;
+      font-weight: 500;
+      letter-spacing: .04em;
+      text-shadow: 0 1px 4px rgba(0,0,0,.6);
     }
 
-    /* タスク4: hero-trust を大きくバッジ風に */
     .hero-trust {
       display: flex;
       flex-wrap: wrap;
@@ -308,8 +310,8 @@
        ANXIETY SECTION
     =========================== */
     #anxiety {
-      background: #fff;
-      padding: 4.5rem 1.25rem;
+      background: var(--cream);
+      padding: 1rem 1.25rem 4rem;
       text-align: center;
       color: #1a1a1a;
     }
@@ -752,25 +754,64 @@
     }
     #worry-tabs .sec-head {
       text-align: center;
-      margin-bottom: 2.5rem;
+      margin-bottom: 2rem;
     }
     #worry-tabs h2 {
       font-size: clamp(1.1rem, 3vw, 1.7rem);
       font-weight: 900;
       color: #1a1a1a;
     }
-    .worry-cards {
+    /* タブボタン群 */
+    .worry-tab-btns {
       display: flex;
-      flex-direction: column;
-      gap: 2rem;
+      gap: .5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .worry-tab-btn {
+      flex: 1 1 auto;
+      min-width: 130px;
+      padding: .75rem 1rem;
+      border: 2px solid var(--sky);
+      border-radius: 50px;
+      background: #fff;
+      color: var(--ca-dark);
+      font-size: .88rem;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      transition: background .2s, color .2s, border-color .2s;
+      text-align: center;
+    }
+    .worry-tab-btn.active {
+      background: var(--ca-dark);
+      border-color: var(--ca-dark);
+      color: #fff;
+    }
+    /* カード表示エリア */
+    .worry-cards {
       max-width: 760px;
       margin: 0 auto;
+      position: relative;
     }
     .worry-card {
       background: #fff;
       border-radius: 14px;
       overflow: hidden;
       box-shadow: 0 2px 18px rgba(28,58,74,.1);
+      display: none;
+      animation: wtFade .3s ease;
+    }
+    .worry-card.active {
+      display: block;
+    }
+    @keyframes wtFade {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
     .worry-card-img {
       width: 100%;
@@ -1281,10 +1322,17 @@
       margin-top: .3rem;
     }
     .ca-tagline {
-      font-size: .9rem;
-      color: rgba(255,255,255,.6);
-      letter-spacing: .04em;
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: .06em;
       text-align: center;
+      background: rgba(245,197,0,.15);
+      border: 1px solid rgba(245,197,0,.4);
+      border-radius: 8px;
+      padding: .9rem 1.5rem;
+      width: 100%;
+      max-width: 600px;
     }
     @media (min-width: 768px) {
       .ca-inner {
@@ -1296,19 +1344,6 @@
       .ca-top { flex: 1; min-width: 300px; text-align: left; }
       .ca-desc { margin: 0; }
       .ca-photo-card { flex-shrink: 0; }
-    }
-
-    /* ===========================
-       AISEAS PHASE LABEL
-    =========================== */
-    .aiseas-phase {
-      font-size: .58rem;
-      font-weight: 700;
-      letter-spacing: .2em;
-      color: var(--sky);
-      text-transform: uppercase;
-      margin-bottom: .5rem;
-      opacity: .7;
     }
 
     /* ===========================
@@ -1423,20 +1458,18 @@
     <div class="ca-badge h-anim h1">SINCE 1965 &nbsp;·&nbsp; VENICE BEACH, CA</div>
     <p class="hero-label h-anim h2">GOLD'S GYM 南船橋千葉店</p>
     <h1 class="h-anim h3">
-      あなたの悩みに合った<br>
-      <span class="gold-shimmer">運動</span>、見つかります。
+      こんなに手厚いサポートが、<br>ずっと<span class="gold-shimmer">無料</span>？
     </h1>
     <p class="hero-sub h-anim h4">
-      肩こり・ダイエット・体力低下…<br>
-      何をすればいいかわからない方へ。
+      まず2週間で、本気を確かめてください。
     </p>
-    <!-- タスク3: 価格追記 -->
+    <!-- CTA ボタン -->
     <div class="h-anim h5">
       <a class="btn-red" href="https://www.goldsgym-membership.jp/kengaku/visits/entry?MODE=2" target="_blank" rel="noopener noreferrer">
         2週間体験を予約する（3,300円）→
       </a>
     </div>
-    <!-- タスク4: バッジ強化 -->
+    <!-- 信頼バッジ -->
     <div class="hero-trust h-anim h5" style="margin-top:.9rem;">
       <span>✅ 初心者大歓迎</span>
       <span>🚫 自動入会なし</span>
@@ -1470,7 +1503,7 @@
       </p>
     </div>
     <div class="ca-photo-card fi">
-      <img src="%E3%82%AB%E3%83%AA%E3%83%95%E3%82%A9%E3%83%AB%E3%83%8B%E3%82%A2%E2%91%A1.jpg" alt="Muscle Beach Santa Monica California" loading="lazy">
+      <img src="%E3%82%B4%E3%83%BC%E3%83%AB%E3%83%89%E3%82%B8%E3%83%A0%EF%BC%91%E5%8F%B7%E5%BA%97.jpg" alt="Gold's Gym 1号店 Venice Beach 1965" loading="lazy">
     </div>
     <div class="ca-facts fi">
       <div class="ca-fact">
@@ -1486,7 +1519,7 @@
         <span class="lab">実績</span>
       </div>
     </div>
-    <p class="ca-tagline fi">世界700店舗のノウハウを、地元南船橋で。</p>
+    <p class="ca-tagline fi">🌏 世界700店舗以上のノウハウを、地元南船橋で。</p>
   </div>
 </section>
 
@@ -1504,11 +1537,11 @@
       <p class="photo-card-cap">スタッフが1対1でサポート</p>
     </div>
     <div class="photo-card">
-      <img src="ジムエリア1.jpg" alt="清潔で広いジムエリア" loading="lazy" onerror="this.style.background='#ddd';this.style.minHeight='180px'">
-      <p class="photo-card-cap">清潔で広いジムエリア</p>
+      <img src="%E3%82%B8%E3%83%A0%E3%82%A8%E3%83%AA%E3%82%A2%E5%BA%83%E5%A4%A7.png" alt="広大なジムエリア" loading="lazy" onerror="this.style.background='#ddd';this.style.minHeight='180px'">
+      <p class="photo-card-cap">広大なジムエリア</p>
     </div>
     <div class="photo-card">
-      <img src="カーディオエリア.jpg" alt="充実のカーディオマシン" loading="lazy" onerror="this.style.background='#ddd';this.style.minHeight='180px'">
+      <img src="%E3%82%AB%E3%83%BC%E3%83%87%E3%82%A3%E3%82%AA%E3%82%A8%E3%83%AA%E3%82%A21.png" alt="充実のカーディオマシン" loading="lazy" onerror="this.style.background='#ddd';this.style.minHeight='180px'">
       <p class="photo-card-cap">充実のカーディオマシン</p>
     </div>
     <div class="photo-card">
@@ -1525,149 +1558,128 @@
   <h2 class="fi">Gold's Gymに対する不安、先回りしてお答えします。</h2>
   <div class="anxiety-grid">
     <div class="anxiety-card fi">
-      <p class="anxiety-worry">「本格的すぎて自分には無理そう…」</p>
-      <p class="anxiety-answer">会員の半数以上が運動初心者または久しぶりの方です。スタッフが最初から全部サポートします。</p>
+      <p class="anxiety-worry">「本格的すぎて、ついていけないんじゃ…」と思っていませんか？</p>
+      <p class="anxiety-answer">ご安心ください。半数以上の会員が、運動初心者か久しぶりの方です。スタッフが最初からすべてサポートするので、ゼロからでも大丈夫。</p>
     </div>
     <div class="anxiety-card fi">
-      <p class="anxiety-worry">「何をすればいいか全くわからない…」</p>
-      <p class="anxiety-answer">入会時にトレーナーが目的をヒアリング。あなた専用のメニューを一緒に作ります。</p>
+      <p class="anxiety-worry">何をすべきか迷っていませんか？</p>
+      <p class="anxiety-answer">大丈夫。入会時にトレーナーがじっくり話を聞いて、あなたの目的にぴったりの専用メニューを一緒に作成します。「とりあえず来てみる」だけで、大丈夫です。</p>
     </div>
     <div class="anxiety-card fi">
-      <p class="anxiety-worry">「一人だと続かないのが心配…」</p>
-      <p class="anxiety-answer">スタッフがいつでも声をかけます。続けているお客様の多くが、スタッフとの関係が支えになったと言います。</p>
+      <p class="anxiety-worry">「また三日坊主で終わるかも…」そう感じていませんか？</p>
+      <p class="anxiety-answer">スタッフがいつでも気軽に声をかけ、気づけば会員さんとも顔なじみに。続けられるのは、意志の強さじゃなく、環境のおかげかもしれません。</p>
     </div>
   </div>
   <p class="anxiety-caption fi">「2週間体験で多いのは、『思っていたより通いやすかった』という声です。」</p>
 </section>
 
 <!-- ===========================
-     STORY — ヒーローズジャーニー（anxiety直後）
-     タスク11: Venice Beachバナー削除、padding-top:5rem
+     STORY — ヒーローズジャーニー
 =========================== -->
 <section id="story">
   <div class="story-inner">
   <div class="story-head fi">
     <span class="sec-label">ONE MEMBER'S STORY</span>
-    <h2>ある会員さんの、<br>180日間の物語。</h2>
-    <p class="sec-sub">これは特別な人の話ではありません。<br>「何とかしなきゃ」と思いながら、一歩を踏み出せなかった、<br>ごく普通の方のリアルなストーリーです。</p>
+    <h2>Gさんの、<br>3ヶ月の物語。</h2>
+    <p class="sec-sub">これは特別な人の話ではありません。</p>
   </div>
 
   <div class="journey">
 
-    <!-- STEP 1: 日常の問題 -->
     <div class="journey-step fi">
       <div class="j-icon">😔</div>
       <div class="j-body">
-        <p class="j-phase">CHAPTER 1 ／ 日常の崩壊</p>
-        <p class="j-title">「健診の数値が、引っかかった。」</p>
+        <p class="j-title">健診で、引っかかった。</p>
         <p class="j-text">
-          デスクワークが続き、気づけば体重は増える一方。<br>
-          ある年の健康診断で、<strong>血糖値・体脂肪ともに要注意</strong>の判定を受けた。<br>
-          「このままじゃまずい」とわかっていても、何をすればいいかわからない。<br>
-          ジムなんて、自分には縁遠い世界だと思っていた。
+          血糖値と体脂肪、どちらも<strong>要注意</strong>の判定。<br>
+          「まあ、そのうちなんとかなる」と、気づかないふりをしていた。
         </p>
       </div>
     </div>
 
-    <!-- STEP 2: 最初の一歩 -->
     <div class="journey-step fi">
-      <div class="j-icon">🔥</div>
+      <div class="j-icon">⚠️</div>
       <div class="j-body">
-        <p class="j-phase">CHAPTER 2 ／ 最初の一歩</p>
-        <p class="j-title">まずは、HOTスタジオへ。</p>
+        <p class="j-title">でも、翌年はもっと悪くなっていた。</p>
         <p class="j-text">
-          「激しい運動はムリ。でも何かしないと」と、<br>
-          思い切ってGold's Gymの<strong>HOTスタジオ</strong>へ通い始めた。<br>
-          ホットヨガ感覚で体を動かしながら、少しずつ体が軽くなっていくのを実感。<br>
-          「ここなら続けられるかも」と、初めて思えた。
+          放置した結果、数値はさらに悪化。<br>
+          医師に「このままでは生活習慣病になりますよ」と言われた。<br>
+          <strong>「あ、これは本当にまずい。」</strong><br>
+          そのとき初めて、本気で焦った。<br>
+          でも何をすればいいか、何から始めればいいか、まったくわからなかった。
         </p>
       </div>
     </div>
 
-    <!-- STEP 3: 転換点（KEY） -->
+    <div class="journey-step fi">
+      <div class="j-icon">🚶</div>
+      <div class="j-body">
+        <p class="j-title">最初は、なんとなくだった。</p>
+        <p class="j-text">
+          家族が通っていたので、深く考えずについてきた。<br>
+          でも体を動かすうちに、なんだか体が軽くなってきた。
+        </p>
+      </div>
+    </div>
+
     <div class="journey-step key fi">
       <div class="j-icon">✨</div>
       <div class="j-body">
-        <p class="j-phase">CHAPTER 3 ／ 運命の誘い</p>
-        <p class="j-title">「無料サポート、試してみませんか？」</p>
+        <p class="j-title">ふらっと誘われた。</p>
         <p class="j-text">
-          スタジオに通ううち、スタッフから声をかけられた。<br>
-          <span class="gold">「ジムの無料サポート、一緒に体験しませんか？」</span><br>
-          正直、乗り気ではなかった。でも、断れなかった。<br>
-          その一言が、すべての始まりになるとは、このとき思ってもみなかった。
+          スタッフに「無料サポート、試してみませんか？」と声をかけられた。<br>
+          よくわからないまま「じゃあ」と答えた。<br>
+          <span class="gold">それが、すべての始まりだった。</span>
         </p>
       </div>
     </div>
 
-    <!-- STEP 4: サポート内容（CLIMAX） -->
     <div class="journey-step climax fi">
       <div class="j-icon">💪</div>
       <div class="j-body">
-        <p class="j-phase">CHAPTER 4 ／ プロの本気</p>
-        <p class="j-title">「ここまでやってくれるのか」と驚いた。</p>
+        <p class="j-title">サポートは、想像以上だった。</p>
         <p class="j-text">
-          無料サポートは、想像をはるかに超えていた。<br>
-          担当トレーナーが、<strong>体の状態・目標・生活習慣</strong>をじっくりヒアリング。<br>
-          ただ機械の使い方を教えるだけじゃない。
+          「体重を減らすより、筋肉をつけて脂肪を落とすほうが、体が元気になりますよ」とトレーナーが教えてくれた。<br>
+          食事のことから運動のやり方まで、自分のために全部考えてくれた。<br>
+          <span class="gold">ジムに来るのが、楽しみになった。</span>
         </p>
         <div class="j-support-list">
-          <span class="j-support-tag">📋 カウンセリング</span>
-          <span class="j-support-tag">🏋️ マシン選定</span>
-          <span class="j-support-tag">✅ フォームチェック</span>
-          <span class="j-support-tag">⚖️ 重量チェック</span>
-          <span class="j-support-tag">🥗 栄養カウンセリング</span>
+          <span class="j-support-tag">カウンセリング</span>
+          <span class="j-support-tag">マシン選定</span>
+          <span class="j-support-tag">フォームチェック</span>
+          <span class="j-support-tag">栄養カウンセリング</span>
         </div>
-        <p class="j-text" style="margin-top:.7rem;">
-          「自分のために、ここまで考えてくれる人がいる」<br>
-          それだけで、ジムに来るのが楽しみになった。
-        </p>
       </div>
     </div>
 
-    <!-- STEP 5: 変容・結果（RESULT） -->
     <div class="journey-step result fi">
       <div class="j-icon">🏆</div>
       <div class="j-body">
-        <p class="j-phase">CHAPTER 5 ／ 3ヶ月後の現実</p>
-        <p class="j-title">数字が、嘘をつかなかった。</p>
+        <p class="j-title">3ヶ月後。</p>
         <p class="j-text">
-          気づいたら、続けることが苦ではなくなっていた。<br>
-          <strong>成果が出るから、楽しくなる。楽しいから、続けられる。</strong><br>
-          そして3ヶ月後——
+          <strong>体重−6kg、体脂肪率−5%。</strong><br>
+          食事管理と筋トレを組み合わせた結果。脂肪が落ちて筋肉がついた分、数字以上に体が変わった。毎日の体の軽さが違う。疲れにくくなった。元気が出てきた。
         </p>
         <div class="j-results">
           <div class="j-result-item">
-            <p class="j-result-num">−5kg</p>
+            <p class="j-result-num">−6kg</p>
             <p class="j-result-desc">体重変化</p>
           </div>
           <div class="j-result-item">
-            <p class="j-result-num">−12%</p>
+            <p class="j-result-num">−5%</p>
             <p class="j-result-desc">体脂肪率</p>
           </div>
-          <div class="j-result-item">
-            <p class="j-result-num">80kg</p>
-            <p class="j-result-desc">スクワット×10回</p>
-          </div>
         </div>
-        <p class="j-text" style="margin-top:.8rem;">
-          体重は5kg減だが、<span class="gold">筋肉がついて引き締まった</span>ので、<br>
-          見た目の変化はもっと大きかった。
-        </p>
       </div>
     </div>
 
-    <!-- STEP 6: 新しい世界 -->
     <div class="journey-step fi">
       <div class="j-icon">☀️</div>
       <div class="j-body">
-        <p class="j-phase">CHAPTER 6 ／ 新しい自分へ</p>
-        <p class="j-title">健診の数値が、正常に戻った日。</p>
+        <p class="j-title">健診の数値が、改善していた。</p>
         <p class="j-text">
-          次の健康診断で、血糖値・体脂肪の数値がすべて<strong>正常範囲内</strong>に。<br>
-          あれだけ頭にあった「数値の不安」が、すっと消えた。<br>
-          体が変わると、気持ちも変わる。<br>
-          <span class="gold">「今からでも、変われるんだ。」</span><br>
-          その自信が、いちばん大きな収穫だった。
+          <span class="gold">「やせるより、元気になることが大事だったんだ。」</span><br>
+          そう気づいたことが、一番の収穫だった。
         </p>
       </div>
     </div>
@@ -1675,25 +1687,34 @@
   </div><!-- /.journey -->
 
   <div class="story-closing fi">
-    <p>この物語は、フィクションではありません。<br>
-    きっかけは、<span>HOTスタジオへの一歩</span>と、<span>スタッフの一言</span>でした。<br>
-    あなたの物語も、ここから始まります。</p>
+    <p><strong>同じ変化を、多くの方が実感しています。</strong><br>
+    体重が減るだけじゃない。筋肉が増えて、脂肪が落ちると、体の中から元気になります。<br>
+    <span>あなたの物語も、ここから始まります。</span></p>
+    <p style="font-size:.78em;opacity:.6;margin-top:.8rem;">※効果には個人差があります。食事管理＋筋トレを3ヶ月継続した場合の一例です。</p>
   </div>
   </div><!-- /.story-inner -->
 </section>
 
 <!-- ===========================
-     タスク7: 悩み別カード縦積み
+     悩み別カード
 =========================== -->
 <section id="worry-tabs">
   <div class="sec-head fi">
     <h2>悩みに合ったプログラムを、一緒に見つけます。</h2>
   </div>
+
+  <!-- タブボタン -->
+  <div class="worry-tab-btns fi">
+    <button class="worry-tab-btn active" data-tab="0">🔥 痩せたい</button>
+    <button class="worry-tab-btn" data-tab="1">💆 体の不調を改善</button>
+    <button class="worry-tab-btn" data-tab="2">⚡ 体力をつけたい</button>
+  </div>
+
   <div class="worry-cards">
 
     <!-- カード1: 痩せたい -->
-    <div class="worry-card fi">
-      <img class="worry-card-img" src="カーディオエリア.jpg" alt="カーディオエリア" loading="lazy" onerror="this.style.background='#ddd';this.style.minHeight='140px'">
+    <div class="worry-card active" data-card="0">
+      <img class="worry-card-img" src="カーディオエリア1.png" alt="カーディオエリア" loading="lazy" onerror="this.style.background='#ddd';this.style.minHeight='140px'">
       <div class="worry-card-body">
         <p class="worry-card-title">🔥 痩せたい・ダイエットしたい</p>
         <p class="worry-card-subtitle">食事制限だけじゃ限界…代謝を上げる運動を</p>
@@ -1713,7 +1734,7 @@
     </div>
 
     <!-- カード2: 体の不調 -->
-    <div class="worry-card fi">
+    <div class="worry-card" data-card="1">
       <img class="worry-card-img" src="無料トレーニングサポート.png" alt="無料トレーニングサポート" loading="lazy" onerror="this.style.background='#ddd';this.style.minHeight='140px'">
       <div class="worry-card-body">
         <p class="worry-card-title">💆 体の不調を改善したい（肩こり・腰痛）</p>
@@ -1734,7 +1755,7 @@
     </div>
 
     <!-- カード3: 体力をつけたい -->
-    <div class="worry-card fi">
+    <div class="worry-card" data-card="2">
       <img class="worry-card-img" src="ジムエリア２.jpg" alt="ジムエリア" loading="lazy" onerror="this.style.background='#ddd';this.style.minHeight='140px'">
       <div class="worry-card-body">
         <p class="worry-card-title">⚡ 体力をつけたい・疲れにくくなりたい</p>
@@ -1800,7 +1821,6 @@
 
 <!-- ===========================
      10. 2週間体験でできること
-     タスク10: 緊急性追加
 =========================== -->
 <section id="campaign">
   <div class="fi">
@@ -1875,7 +1895,7 @@
 </section>
 
 <!-- ===========================
-     タスク9: FAQセクション
+     FAQ
 =========================== -->
 <section id="faq">
   <h2 class="fi">よくあるご質問</h2>
@@ -1935,7 +1955,7 @@
 </section>
 
 <!-- ===========================
-     タスク6: 社会的証明統合セクション
+     社会的証明
 =========================== -->
 <section id="social-proof">
   <div class="fi">
@@ -2059,7 +2079,7 @@
 </section>
 
 <!-- ===========================
-     タスク8: 申込みフロー3ステップ（campaign直前）
+     申込みフロー3ステップ
 =========================== -->
 <section id="flow">
   <div class="fi">
@@ -2208,6 +2228,19 @@
         btn.setAttribute('aria-expanded', 'true');
         btn.nextElementSibling.classList.add('open');
       }
+    });
+  });
+
+  /* ---- 悩み別タブ切り替え ---- */
+  const worryTabBtns = document.querySelectorAll('.worry-tab-btn');
+  const worryCards   = document.querySelectorAll('.worry-card');
+  worryTabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const idx = btn.dataset.tab;
+      worryTabBtns.forEach(b => b.classList.remove('active'));
+      worryCards.forEach(c => c.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelector(`.worry-card[data-card="${idx}"]`).classList.add('active');
     });
   });
 </script>

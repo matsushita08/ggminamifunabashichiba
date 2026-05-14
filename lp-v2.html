@@ -754,25 +754,64 @@
     }
     #worry-tabs .sec-head {
       text-align: center;
-      margin-bottom: 2.5rem;
+      margin-bottom: 2rem;
     }
     #worry-tabs h2 {
       font-size: clamp(1.1rem, 3vw, 1.7rem);
       font-weight: 900;
       color: #1a1a1a;
     }
-    .worry-cards {
+    /* タブボタン群 */
+    .worry-tab-btns {
       display: flex;
-      flex-direction: column;
-      gap: 2rem;
+      gap: .5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .worry-tab-btn {
+      flex: 1 1 auto;
+      min-width: 130px;
+      padding: .75rem 1rem;
+      border: 2px solid var(--sky);
+      border-radius: 50px;
+      background: #fff;
+      color: var(--ca-dark);
+      font-size: .88rem;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      transition: background .2s, color .2s, border-color .2s;
+      text-align: center;
+    }
+    .worry-tab-btn.active {
+      background: var(--ca-dark);
+      border-color: var(--ca-dark);
+      color: #fff;
+    }
+    /* カード表示エリア */
+    .worry-cards {
       max-width: 760px;
       margin: 0 auto;
+      position: relative;
     }
     .worry-card {
       background: #fff;
       border-radius: 14px;
       overflow: hidden;
       box-shadow: 0 2px 18px rgba(28,58,74,.1);
+      display: none;
+      animation: wtFade .3s ease;
+    }
+    .worry-card.active {
+      display: block;
+    }
+    @keyframes wtFade {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
     .worry-card-img {
       width: 100%;
@@ -1663,11 +1702,19 @@
   <div class="sec-head fi">
     <h2>悩みに合ったプログラムを、一緒に見つけます。</h2>
   </div>
+
+  <!-- タブボタン -->
+  <div class="worry-tab-btns fi">
+    <button class="worry-tab-btn active" data-tab="0">🔥 痩せたい</button>
+    <button class="worry-tab-btn" data-tab="1">💆 体の不調を改善</button>
+    <button class="worry-tab-btn" data-tab="2">⚡ 体力をつけたい</button>
+  </div>
+
   <div class="worry-cards">
 
     <!-- カード1: 痩せたい -->
-    <div class="worry-card fi">
-      <img class="worry-card-img" src="カーディオエリア.jpg" alt="カーディオエリア" loading="lazy" onerror="this.style.background='#ddd';this.style.minHeight='140px'">
+    <div class="worry-card active" data-card="0">
+      <img class="worry-card-img" src="カーディオエリア1.png" alt="カーディオエリア" loading="lazy" onerror="this.style.background='#ddd';this.style.minHeight='140px'">
       <div class="worry-card-body">
         <p class="worry-card-title">🔥 痩せたい・ダイエットしたい</p>
         <p class="worry-card-subtitle">食事制限だけじゃ限界…代謝を上げる運動を</p>
@@ -1687,7 +1734,7 @@
     </div>
 
     <!-- カード2: 体の不調 -->
-    <div class="worry-card fi">
+    <div class="worry-card" data-card="1">
       <img class="worry-card-img" src="無料トレーニングサポート.png" alt="無料トレーニングサポート" loading="lazy" onerror="this.style.background='#ddd';this.style.minHeight='140px'">
       <div class="worry-card-body">
         <p class="worry-card-title">💆 体の不調を改善したい（肩こり・腰痛）</p>
@@ -1708,7 +1755,7 @@
     </div>
 
     <!-- カード3: 体力をつけたい -->
-    <div class="worry-card fi">
+    <div class="worry-card" data-card="2">
       <img class="worry-card-img" src="ジムエリア２.jpg" alt="ジムエリア" loading="lazy" onerror="this.style.background='#ddd';this.style.minHeight='140px'">
       <div class="worry-card-body">
         <p class="worry-card-title">⚡ 体力をつけたい・疲れにくくなりたい</p>
@@ -2181,6 +2228,19 @@
         btn.setAttribute('aria-expanded', 'true');
         btn.nextElementSibling.classList.add('open');
       }
+    });
+  });
+
+  /* ---- 悩み別タブ切り替え ---- */
+  const worryTabBtns = document.querySelectorAll('.worry-tab-btn');
+  const worryCards   = document.querySelectorAll('.worry-card');
+  worryTabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const idx = btn.dataset.tab;
+      worryTabBtns.forEach(b => b.classList.remove('active'));
+      worryCards.forEach(c => c.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelector(`.worry-card[data-card="${idx}"]`).classList.add('active');
     });
   });
 </script>

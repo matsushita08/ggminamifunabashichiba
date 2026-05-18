@@ -147,7 +147,7 @@
     }
     .header-logo img { height: 18px; }
     .header-sep { width: 1px; height: 18px; background: rgba(255,255,255,.35); }
-    .header-store { font-size: .78rem; font-weight: 700; color: #fff; letter-spacing: .02em; }
+    .header-store { font-size: .78rem; font-weight: 700; color: #fff; letter-spacing: .02em; white-space: nowrap; }
     .header-cta { display: none; }
     @media (min-width: 768px) {
       .header-cta { display: inline-block; font-size: .82rem; padding: .6rem 1.2rem; }
@@ -188,13 +188,13 @@
       overflow: hidden;
       background:
         linear-gradient(to bottom, rgba(0,0,0,.42) 0%, rgba(0,0,0,.28) 45%, rgba(0,0,0,.62) 100%),
-        url('%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88%E5%86%99%E7%9C%9F.PNG') center 22%/cover no-repeat;
+        url('training-top.png') center 22%/cover no-repeat;
     }
     @media (max-width: 767px) {
       #hero {
         background:
           linear-gradient(to bottom, rgba(0,0,0,.42) 0%, rgba(0,0,0,.28) 45%, rgba(0,0,0,.62) 100%),
-          url('%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88%E5%86%99%E7%9C%9F.PNG') center 12%/cover no-repeat;
+          url('training-top.png') center 12%/cover no-repeat;
       }
     }
     #hero > * { position: relative; z-index: 1; }
@@ -236,7 +236,7 @@
     }
 
     #hero h1 {
-      font-size: clamp(1.75rem, 5.5vw, 2.8rem);
+      font-size: clamp(1.5rem, 5vw, 2.8rem);
       font-weight: 900;
       line-height: 1.35;
       color: #fff;
@@ -625,11 +625,14 @@
     .ba-card {
       background: #fff;
       border-radius: 14px;
-      padding: 1.6rem 1.4rem 1.5rem;
+      padding: 1.4rem 1.2rem;
       box-shadow: 0 2px 20px rgba(0,0,0,.07);
       display: flex;
       flex-direction: column;
-      gap: .9rem;
+      gap: .85rem;
+    }
+    .ba-card-inner {
+      display: contents;
     }
     .ba-avatar {
       width: 52px; height: 52px;
@@ -1128,6 +1131,12 @@
       color: var(--sky);
       font-weight: 900;
       flex-shrink: 0;
+      white-space: nowrap;
+    }
+    .faq-question > span {
+      display: flex;
+      gap: .3em;
+      align-items: baseline;
     }
     .faq-question .faq-chevron {
       flex-shrink: 0;
@@ -1152,34 +1161,29 @@
       position: relative;
       padding: 5.5rem 1.25rem;
       text-align: center;
+      background: #111;
       overflow: hidden;
     }
-    #final-cta-bg {
-      position: absolute;
-      inset: 0;
-      background: url('南船橋正面.jpeg') center/cover no-repeat;
-      filter: brightness(.28);
-      z-index: 0;
-    }
+    #final-cta-bg { display: none; }
     #final-cta > * { position: relative; z-index: 1; }
     #final-cta h2 {
-      font-size: clamp(1.3rem, 3.8vw, 2rem);
+      font-size: clamp(1.4rem, 4vw, 2.2rem);
       font-weight: 900;
-      line-height: 1.4;
-      margin-bottom: .75rem;
+      line-height: 1.5;
+      margin-bottom: 1rem;
       color: #fff;
     }
     #final-cta .sec-sub {
-      font-size: .92rem;
-      color: rgba(255,255,255,.75);
-      line-height: 1.7;
-      margin-bottom: 2rem;
+      font-size: 1rem;
+      color: rgba(255,255,255,.8);
+      line-height: 1.8;
+      margin-bottom: 2.2rem;
     }
     #final-cta .btn-red {
-      max-width: 320px;
+      max-width: 380px;
       width: 100%;
-      font-size: 1rem;
-      padding: 1.1rem 1.5rem;
+      font-size: 1.05rem;
+      padding: 1.2rem 1.8rem;
     }
     .trust-pills {
       display: flex;
@@ -1189,39 +1193,41 @@
       margin: 1.5rem 0;
     }
     .trust-pill {
-      font-size: .72rem;
+      font-size: .78rem;
       font-weight: 700;
-      padding: .35rem .85rem;
+      padding: .45rem 1rem;
       border-radius: 999px;
-      border: 1px solid var(--gold);
+      border: 1.5px solid var(--gold);
       color: var(--gold);
+      background: rgba(255,255,255,.04);
     }
     .final-note {
-      font-size: .72rem;
-      color: rgba(255,255,255,.45);
-      margin-top: .85rem;
+      font-size: .75rem;
+      color: rgba(255,255,255,.5);
+      margin-top: 1rem;
     }
     .tel-box {
       display: inline-block;
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.15);
-      border-radius: 10px;
-      padding: 1.1rem 1.6rem;
-      margin-top: 2rem;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 12px;
+      padding: 1.4rem 2rem;
+      margin-top: 2.2rem;
       text-align: center;
     }
     .tel-box a {
       display: block;
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       font-weight: 900;
-      color: #fff;
-      letter-spacing: .04em;
-      margin-bottom: .3rem;
+      color: var(--gold);
+      letter-spacing: .06em;
+      margin-bottom: .4rem;
+      text-decoration: none;
     }
     .tel-box .tel-hours {
-      font-size: .72rem;
-      color: rgba(255,255,255,.55);
-      line-height: 1.6;
+      font-size: .78rem;
+      color: rgba(255,255,255,.6);
+      line-height: 1.7;
     }
 
     /* ===========================
@@ -1427,9 +1433,73 @@
       font-size: .65rem;
       color: rgba(255,255,255,.25);
     }
+
+  /* ========== TREND ANIMATIONS ========== */
+  /* 1. スクロールプログレスバー */
+  #scroll-bar {
+    position: fixed; top: 0; left: 0;
+    height: 3px; background: var(--gold);
+    width: 0%; z-index: 9999;
+    transition: width .05s linear;
+  }
+
+  /* 4. 画像ホバーズーム */
+  .g-item { overflow: hidden; }
+  .g-item img,
+  .photo-card img,
+  .ca-photo-card img { transition: transform .45s ease; }
+  .g-item:hover img,
+  .photo-card:hover img,
+  .ca-photo-card:hover img { transform: scale(1.07); }
+
+  /* 6. ボタンシマー */
+  .btn-red { position: relative; overflow: hidden; }
+  .btn-red::after {
+    content: '';
+    position: absolute; top: 0; left: -100%;
+    width: 60%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,.28), transparent);
+    animation: btnShimmer 2.6s infinite;
+  }
+  @keyframes btnShimmer {
+    0%   { left: -100%; }
+    100% { left: 220%; }
+  }
+
+  /* 7. 価格フリップ */
+  .cp-new {
+    display: inline-block;
+    opacity: 0;
+    transform: scale(.5);
+  }
+  .cp-new.price-popped {
+    animation: pricePop .65s cubic-bezier(.34,1.56,.64,1) both;
+  }
+  @keyframes pricePop {
+    from { transform: scale(.5); opacity: 0; }
+    to   { transform: scale(1);  opacity: 1; }
+  }
+
+  /* 5. タイピングカーソル（PC限定） */
+  @media (min-width: 768px) {
+    .typing-cursor::after {
+      content: '|';
+      margin-left: 2px;
+      animation: blink .75s step-end infinite;
+      color: var(--gold);
+    }
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+  }
+  /* ========== END TREND ANIMATIONS ========== */
+
   </style>
 </head>
 <body>
+
+<!-- スクロールプログレスバー -->
+<div id="scroll-bar"></div>
 
 <!-- ===========================
      1. HEADER（紺色ナビゲーション）
@@ -1458,25 +1528,16 @@
     <div class="ca-badge h-anim h1">SINCE 1965 &nbsp;·&nbsp; VENICE BEACH, CA</div>
     <p class="hero-label h-anim h2">GOLD'S GYM 南船橋千葉店</p>
     <h1 class="h-anim h3">
-      こんなに手厚いサポートが、<br>ずっと<span class="gold-shimmer">無料</span>？
+      まずは2週間、<br><span class="gold-shimmer">無料サポート</span>を体感してください。
     </h1>
-    <p class="hero-sub h-anim h4">
-      まず2週間で、本気を確かめてください。
-    </p>
     <!-- CTA ボタン -->
     <div class="h-anim h5">
       <a class="btn-red" href="https://www.goldsgym-membership.jp/kengaku/visits/entry?MODE=2" target="_blank" rel="noopener noreferrer">
         2週間体験を予約する（3,300円）→
       </a>
     </div>
-    <!-- 信頼バッジ -->
-    <div class="hero-trust h-anim h5" style="margin-top:.9rem;">
-      <span>✅ 初心者大歓迎</span>
-      <span>🚫 自動入会なし</span>
-      <span>🎯 無料サポート付き</span>
-    </div>
     <div class="price-badge h-anim h6">
-      <span class="orig">通常6,600円</span>
+      <span class="orig">6,600円</span>
       <span>→</span>
       <span class="new-price">3,300円</span>
       <span class="off">50%OFF</span>
@@ -1497,13 +1558,11 @@
       <p class="ca-origin-label">🌴 SINCE 1965 · VENICE BEACH, CALIFORNIA</p>
       <h2 class="ca-headline">SERIOUS FITNESS<br><span>FOR EVERYBODY</span></h2>
       <p class="ca-desc">
-        Gold's Gymは1965年、カリフォルニア・ベニスビーチで誕生。<br>
-        世界中のアスリートから初心者まで、60年にわたり「結果を出す場所」として愛され続けてきた、フィットネスの聖地。<br>
-        そのノウハウとブランドが、地元南船橋にあります。
+        60年・700店舗のノウハウが、地元南船橋にあります。
       </p>
     </div>
     <div class="ca-photo-card fi">
-      <img src="%E3%82%B4%E3%83%BC%E3%83%AB%E3%83%89%E3%82%B8%E3%83%A0%EF%BC%91%E5%8F%B7%E5%BA%97.jpg" alt="Gold's Gym 1号店 Venice Beach 1965" loading="lazy">
+      <img src="goldsgym-no1.jpg" alt="Gold's Gym 1号店 Venice Beach 1965" loading="lazy">
     </div>
     <div class="ca-facts fi">
       <div class="ca-fact">
@@ -1537,7 +1596,7 @@
       <p class="photo-card-cap">スタッフが1対1でサポート</p>
     </div>
     <div class="photo-card">
-      <img src="%E3%82%B8%E3%83%A0%E3%82%A8%E3%83%AA%E3%82%A2%E5%BA%83%E5%A4%A7.png" alt="広大なジムエリア" loading="lazy" onerror="this.style.background='#ddd';this.style.minHeight='180px'">
+      <img src="gym-wide.png" alt="広大なジムエリア" loading="lazy" onerror="this.style.background='#ddd';this.style.minHeight='180px'">
       <p class="photo-card-cap">広大なジムエリア</p>
     </div>
     <div class="photo-card">
@@ -1558,16 +1617,16 @@
   <h2 class="fi">Gold's Gymに対する不安、先回りしてお答えします。</h2>
   <div class="anxiety-grid">
     <div class="anxiety-card fi">
-      <p class="anxiety-worry">「本格的すぎて、ついていけないんじゃ…」と思っていませんか？</p>
-      <p class="anxiety-answer">ご安心ください。半数以上の会員が、運動初心者か久しぶりの方です。スタッフが最初からすべてサポートするので、ゼロからでも大丈夫。</p>
+      <p class="anxiety-worry">「本格的すぎて、ついていけないんじゃ…」</p>
+      <p class="anxiety-answer"><strong>会員の半数以上が運動初心者。</strong>ゼロからでもスタッフが全部サポートします。</p>
     </div>
     <div class="anxiety-card fi">
-      <p class="anxiety-worry">何をすべきか迷っていませんか？</p>
-      <p class="anxiety-answer">大丈夫です。入会時にトレーナーがじっくり話を聞いて、あなた専用のメニューを一緒に作成します。「とりあえず来てみる」だけで十分です。</p>
+      <p class="anxiety-worry">「何をすればいいかわからない…」</p>
+      <p class="anxiety-answer"><strong>トレーナーがあなた専用メニューを作成。</strong>「とりあえず来てみる」だけで十分です。</p>
     </div>
     <div class="anxiety-card fi">
-      <p class="anxiety-worry">「また三日坊主で終わるかも…」そう感じていませんか？</p>
-      <p class="anxiety-answer">スタッフがいつでも気軽に声をかけ、気づけば会員さんとも顔なじみに。続けられるのは、意志の強さじゃなく、環境のおかげかもしれません。</p>
+      <p class="anxiety-worry">「また三日坊主になりそう…」</p>
+      <p class="anxiety-answer"><strong>続けられるのは意志の強さじゃなく、環境のおかげ。</strong>スタッフが自然に声をかけます。</p>
     </div>
   </div>
   <p class="anxiety-caption fi">「2週間体験で多いのは、『思っていたより通いやすかった』という声です。」</p>
@@ -1591,22 +1650,8 @@
       <div class="j-body">
         <p class="j-title">健診で、引っかかった。</p>
         <p class="j-text">
-          血糖値と体脂肪、どちらも<strong>要注意</strong>の判定。<br>
-          「まあ、そのうちなんとかなる」と、気づかないふりをしていた。
-        </p>
-      </div>
-    </div>
-
-    <div class="journey-step fi">
-      <div class="j-icon">⚠️</div>
-      <div class="j-body">
-        <p class="j-title">でも、翌年はもっと悪くなっていた。</p>
-        <p class="j-text">
-          放置した結果、数値はさらに悪化。<br>
-          医師に「このままでは生活習慣病になりますよ」と言われた。<br>
-          <strong>「あ、これは本当にまずい。」</strong><br>
-          そのとき初めて、本気で焦った。<br>
-          でも何をすればいいか、何から始めればいいか、まったくわからなかった。
+          血糖値と体脂肪、どちらも<strong>要注意</strong>。<br>
+          医師に「このままでは生活習慣病になりますよ」と言われた。
         </p>
       </div>
     </div>
@@ -1616,8 +1661,7 @@
       <div class="j-body">
         <p class="j-title">最初は、なんとなくだった。</p>
         <p class="j-text">
-          家族が通っていたので、深く考えずについてきた。<br>
-          でも体を動かすうちに、なんだか体が軽くなってきた。
+          家族に誘われてなんとなく来てみた。<br>でも体を動かすうちに、体が軽くなってきた。
         </p>
       </div>
     </div>
@@ -1639,8 +1683,7 @@
       <div class="j-body">
         <p class="j-title">サポートは、想像以上だった。</p>
         <p class="j-text">
-          「体重を減らすより、筋肉をつけて脂肪を落とすほうが、体が元気になりますよ」とトレーナーが教えてくれた。<br>
-          食事のことから運動のやり方まで、自分のために全部考えてくれた。<br>
+          食事から運動まで、自分のために全部考えてくれた。<br>
           <span class="gold">ジムに来るのが、楽しみになった。</span>
         </p>
         <div class="j-support-list">
@@ -1658,7 +1701,7 @@
         <p class="j-title">3ヶ月後。</p>
         <p class="j-text">
           <strong>体重−6kg、体脂肪率−5%。</strong><br>
-          食事管理と筋トレを組み合わせた結果。脂肪が落ちて筋肉がついた分、数字以上に体が変わった。毎日の体の軽さが違う。疲れにくくなった。元気が出てきた。
+          毎日の体の軽さが違う。疲れにくくなった。元気が出てきた。
         </p>
         <div class="j-results">
           <div class="j-result-item">
@@ -1687,9 +1730,6 @@
   </div><!-- /.journey -->
 
   <div class="story-closing fi">
-    <p><strong>同じ変化を、多くの方が実感しています。</strong><br>
-    体重が減るだけじゃない。筋肉が増えて、脂肪が落ちると、体の中から元気になります。<br>
-    <span>あなたの物語も、ここから始まります。</span></p>
     <p style="font-size:.78em;opacity:.6;margin-top:.8rem;">※効果には個人差があります。食事管理＋筋トレを3ヶ月継続した場合の一例です。</p>
   </div>
   </div><!-- /.story-inner -->
@@ -1710,157 +1750,109 @@
 
     <!-- 30代女性 -->
     <div class="ba-card fi">
-      <div class="ba-profile">
-        <div class="ba-avatar">M</div>
-        <div class="ba-profile-info">
-          <p class="ba-meta">30代・女性</p>
-          <p class="ba-tag">産後ダイエット目的</p>
+      <div class="ba-card-inner">
+        <div class="ba-profile">
+          <div class="ba-avatar">M</div>
+          <div class="ba-profile-info">
+            <p class="ba-meta">30代・女性</p>
+            <p class="ba-tag">産後ダイエット目的</p>
+          </div>
         </div>
-      </div>
-      <div class="ba-result">
-        <p class="ba-result-num">−5kg</p>
-        <p class="ba-result-label">4ヶ月での変化</p>
-      </div>
-      <div>
-        <div class="ba-item">
-          <p class="ba-item-label">入会前の悩み</p>
-          <p class="ba-item-val">産後から体型が戻らず、自信をなくしていた</p>
+        <div class="ba-result">
+          <p class="ba-result-num">−5kg</p>
+          <p class="ba-result-label">4ヶ月での変化</p>
         </div>
-        <div class="ba-item">
-          <p class="ba-item-label">続けられた理由</p>
-          <p class="ba-item-val">「育児の合間でも通える」と言ってもらえた</p>
-        </div>
-        <p class="voice-quote" style="margin-top:.8rem;">「体重より体型が変わって、洋服が似合うようになった。自信が戻りました。」</p>
+        <p class="voice-quote">「体重より体型が変わって、洋服が似合うようになった。自信が戻りました。」</p>
       </div>
     </div>
 
     <!-- 40代女性 -->
     <div class="ba-card fi">
-      <div class="ba-profile">
-        <div class="ba-avatar">Y</div>
-        <div class="ba-profile-info">
-          <p class="ba-meta">40代・女性</p>
-          <p class="ba-tag">肩こり・疲労改善目的</p>
+      <div class="ba-card-inner">
+        <div class="ba-profile">
+          <div class="ba-avatar">Y</div>
+          <div class="ba-profile-info">
+            <p class="ba-meta">40代・女性</p>
+            <p class="ba-tag">肩こり・疲労改善目的</p>
+          </div>
         </div>
-      </div>
-      <div class="ba-result">
-        <p class="ba-result-num">肩こり解消</p>
-        <p class="ba-result-label">2ヶ月での変化</p>
-      </div>
-      <div>
-        <div class="ba-item">
-          <p class="ba-item-label">入会前の悩み</p>
-          <p class="ba-item-val">デスクワークで肩・首がひどく凝り、毎日だるかった</p>
+        <div class="ba-result">
+          <p class="ba-result-num">肩こり解消</p>
+          <p class="ba-result-label">2ヶ月での変化</p>
         </div>
-        <div class="ba-item">
-          <p class="ba-item-label">続けられた理由</p>
-          <p class="ba-item-val">週1回でも変化が出ると教えてもらえて気軽だった</p>
-        </div>
-        <p class="voice-quote" style="margin-top:.8rem;">「ストレッチとマシンで、10年以上の肩こりが嘘みたいに楽になりました。」</p>
+        <p class="voice-quote">「ストレッチとマシンで、10年以上の肩こりが嘘みたいに楽になりました。」</p>
       </div>
     </div>
 
     <!-- 50代女性 -->
     <div class="ba-card fi">
-      <div class="ba-profile">
-        <div class="ba-avatar">K</div>
-        <div class="ba-profile-info">
-          <p class="ba-meta">50代・女性</p>
-          <p class="ba-tag">ダイエット目的</p>
+      <div class="ba-card-inner">
+        <div class="ba-profile">
+          <div class="ba-avatar">K</div>
+          <div class="ba-profile-info">
+            <p class="ba-meta">50代・女性</p>
+            <p class="ba-tag">ダイエット目的</p>
+          </div>
         </div>
-      </div>
-      <div class="ba-result">
-        <p class="ba-result-num">−8kg</p>
-        <p class="ba-result-label">3ヶ月での変化</p>
-      </div>
-      <div>
-        <div class="ba-item">
-          <p class="ba-item-label">入会前の悩み</p>
-          <p class="ba-item-val">食事制限しても体重が全然減らなかった</p>
+        <div class="ba-result">
+          <p class="ba-result-num">−8kg</p>
+          <p class="ba-result-label">3ヶ月での変化</p>
         </div>
-        <div class="ba-item">
-          <p class="ba-item-label">続けられた理由</p>
-          <p class="ba-item-val">自分に合ったメニューで無理なく続けられた</p>
-        </div>
-        <p class="voice-quote" style="margin-top:.8rem;">「体験初日にスタッフさんが全部教えてくれて。2週間で『これなら続けられる』と思えました。」</p>
+        <p class="voice-quote">「体験初日にスタッフさんが全部教えてくれて。2週間で『これなら続けられる』と思えました。」</p>
       </div>
     </div>
 
     <!-- 40代男性 -->
     <div class="ba-card fi">
-      <div class="ba-profile">
-        <div class="ba-avatar">T</div>
-        <div class="ba-profile-info">
-          <p class="ba-meta">40代・男性</p>
-          <p class="ba-tag">腰痛改善目的</p>
+      <div class="ba-card-inner">
+        <div class="ba-profile">
+          <div class="ba-avatar">T</div>
+          <div class="ba-profile-info">
+            <p class="ba-meta">40代・男性</p>
+            <p class="ba-tag">腰痛改善目的</p>
+          </div>
         </div>
-      </div>
-      <div class="ba-result">
-        <p class="ba-result-num">腰痛改善</p>
-        <p class="ba-result-label">2ヶ月での変化</p>
-      </div>
-      <div>
-        <div class="ba-item">
-          <p class="ba-item-label">入会前の悩み</p>
-          <p class="ba-item-val">10年悩んだ慢性的な腰痛</p>
+        <div class="ba-result">
+          <p class="ba-result-num">腰痛改善</p>
+          <p class="ba-result-label">2ヶ月での変化</p>
         </div>
-        <div class="ba-item">
-          <p class="ba-item-label">続けられた理由</p>
-          <p class="ba-item-val">激しい運動なし。自分のペースで無理なく</p>
-        </div>
-        <p class="voice-quote" style="margin-top:.8rem;">「トレーナーが腰に負担のないメニューを組んでくれて、今は腰痛なく通えています。」</p>
+        <p class="voice-quote">「トレーナーが腰に負担のないメニューを組んでくれて、今は腰痛なく通えています。」</p>
       </div>
     </div>
 
     <!-- 50代男性 -->
     <div class="ba-card fi">
-      <div class="ba-profile">
-        <div class="ba-avatar">H</div>
-        <div class="ba-profile-info">
-          <p class="ba-meta">50代・男性</p>
-          <p class="ba-tag">体力・血糖値改善目的</p>
+      <div class="ba-card-inner">
+        <div class="ba-profile">
+          <div class="ba-avatar">H</div>
+          <div class="ba-profile-info">
+            <p class="ba-meta">50代・男性</p>
+            <p class="ba-tag">体力・血糖値改善目的</p>
+          </div>
         </div>
-      </div>
-      <div class="ba-result">
-        <p class="ba-result-num">健診改善</p>
-        <p class="ba-result-label">3ヶ月での変化</p>
-      </div>
-      <div>
-        <div class="ba-item">
-          <p class="ba-item-label">入会前の悩み</p>
-          <p class="ba-item-val">健診で要注意、でも何から始めればいいかわからなかった</p>
+        <div class="ba-result">
+          <p class="ba-result-num">健診改善</p>
+          <p class="ba-result-label">3ヶ月での変化</p>
         </div>
-        <div class="ba-item">
-          <p class="ba-item-label">続けられた理由</p>
-          <p class="ba-item-val">目的に合ったメニューをトレーナーが一緒に考えてくれた</p>
-        </div>
-        <p class="voice-quote" style="margin-top:.8rem;">「同世代の方も多く、スタッフも優しい。今では週3で通うのが楽しみです。」</p>
+        <p class="voice-quote">「同世代の方も多く、スタッフも優しい。今では週3で通うのが楽しみです。」</p>
       </div>
     </div>
 
     <!-- 60代男性 -->
     <div class="ba-card fi">
-      <div class="ba-profile">
-        <div class="ba-avatar">S</div>
-        <div class="ba-profile-info">
-          <p class="ba-meta">60代・男性</p>
-          <p class="ba-tag">体力づくり目的</p>
+      <div class="ba-card-inner">
+        <div class="ba-profile">
+          <div class="ba-avatar">S</div>
+          <div class="ba-profile-info">
+            <p class="ba-meta">60代・男性</p>
+            <p class="ba-tag">体力づくり目的</p>
+          </div>
         </div>
-      </div>
-      <div class="ba-result">
-        <p class="ba-result-num">5km走破</p>
-        <p class="ba-result-label">半年後の変化</p>
-      </div>
-      <div>
-        <div class="ba-item">
-          <p class="ba-item-label">入会前の悩み</p>
-          <p class="ba-item-val">階段で息切れするほど体力が落ちていた</p>
+        <div class="ba-result">
+          <p class="ba-result-num">5km走破</p>
+          <p class="ba-result-label">半年後の変化</p>
         </div>
-        <div class="ba-item">
-          <p class="ba-item-label">続けられた理由</p>
-          <p class="ba-item-val">スタッフが段階的にメニューを調整してくれた</p>
-        </div>
-        <p class="voice-quote" style="margin-top:.8rem;">「最初は歩くのもつらかったのに、半年後には5km走れるようになりました。」</p>
+        <p class="voice-quote">「最初は歩くのもつらかったのに、半年後には5km走れるようになりました。」</p>
       </div>
     </div>
 
@@ -1891,8 +1883,7 @@
         <p class="worry-card-title">🔥 痩せたい・ダイエットしたい</p>
         <p class="worry-card-subtitle">食事制限だけじゃ限界…代謝を上げる運動を</p>
         <ul class="worry-card-list">
-          <li>ウォーキング・ジョギングマシン（週3回30分）</li>
-          <li>エアロバイク・エリプティカル</li>
+          <li>ランニング・バイクなど有酸素マシン</li>
           <li>スタジオ有酸素プログラム</li>
           <li>スタッフ監修のストレッチ＋筋トレ</li>
         </ul>
@@ -1912,8 +1903,7 @@
         <p class="worry-card-title">💆 体の不調を改善したい（肩こり・腰痛）</p>
         <p class="worry-card-subtitle">長時間のデスクワーク・運動不足が原因かも</p>
         <ul class="worry-card-list">
-          <li>姿勢改善ストレッチ</li>
-          <li>体幹トレーニング（マシン使用）</li>
+          <li>姿勢改善ストレッチ・体幹トレーニング</li>
           <li>ヨガ・ピラティス系スタジオ</li>
           <li>トレーナーによる不調別メニュー作成</li>
         </ul>
@@ -1928,13 +1918,12 @@
 
     <!-- カード3: 体力をつけたい -->
     <div class="worry-card" data-card="2">
-      <img class="worry-card-img" src="%E3%82%B8%E3%83%A0%E3%82%A8%E3%83%AA%E3%82%A2%E5%BA%83%E5%A4%A7.png" alt="ジムエリア" loading="lazy" onerror="this.style.background='#ddd';this.style.minHeight='140px'">
+      <img class="worry-card-img" src="gym-wide.png" alt="ジムエリア" loading="lazy" onerror="this.style.background='#ddd';this.style.minHeight='140px'">
       <div class="worry-card-body">
         <p class="worry-card-title">⚡ 体力をつけたい・疲れにくくなりたい</p>
         <p class="worry-card-subtitle">階段で息切れ・趣味が楽しめない…体力は取り戻せます</p>
         <ul class="worry-card-list">
           <li>ウォーキングマシン（低負荷スタート）</li>
-          <li>サーキットトレーニング</li>
           <li>スタジオダンス・エアロビクス</li>
           <li>段階的なマシントレーニング</li>
         </ul>
@@ -1957,7 +1946,7 @@
   <h2 class="fi">通いやすさも、続けやすさの一部です。</h2>
   <div class="gallery-scroll no-scrollbar fi">
     <div class="g-item">
-      <img src="%E3%82%B8%E3%83%A0%E3%82%A8%E3%83%AA%E3%82%A2%E5%BA%83%E5%A4%A7.png" alt="ジムエリア" loading="lazy" onerror="this.style.background='#e8e4dc';this.style.minHeight='180px'">
+      <img src="gym-wide.png" alt="ジムエリア" loading="lazy" onerror="this.style.background='#e8e4dc';this.style.minHeight='180px'">
       <p class="g-cap">ジムエリア</p>
     </div>
     <div class="g-item">
@@ -2010,56 +1999,37 @@
   <div class="items-grid fi">
     <div class="item-box">
       <div class="item-icon">🏋️</div>
-      <p class="item-title">ジムエリア全施設利用</p>
-      <p class="item-desc">最新マシンを自由に使える</p>
+      <p class="item-title">全施設利用</p>
+      <p class="item-desc">最新マシンが使い放題</p>
     </div>
     <div class="item-box">
       <div class="item-icon">🚴</div>
       <p class="item-title">有酸素マシン</p>
-      <p class="item-desc">ランニング・バイク・エリプト</p>
+      <p class="item-desc">バイク・ランニング等</p>
     </div>
     <div class="item-box">
       <div class="item-icon">👨‍🏫</div>
-      <p class="item-title">スタッフによる使い方案内</p>
-      <p class="item-desc">初日から1対1でサポート</p>
+      <p class="item-title">使い方案内</p>
+      <p class="item-desc">初日から1対1対応</p>
     </div>
     <div class="item-box">
       <div class="item-icon">📋</div>
-      <p class="item-title">目的別メニュー相談</p>
-      <p class="item-desc">あなた専用プログラムを設計</p>
+      <p class="item-title">メニュー相談</p>
+      <p class="item-desc">専用プログラムを作成</p>
     </div>
     <div class="item-box">
       <div class="item-icon">💃</div>
-      <p class="item-title">スタジオプログラム体験</p>
-      <p class="item-desc">週50本以上が追加料金なし</p>
+      <p class="item-title">スタジオ体験</p>
+      <p class="item-desc">週50本以上が無料</p>
     </div>
     <div class="item-box">
       <div class="item-icon">🚿</div>
-      <p class="item-title">シャワー・ロッカー利用</p>
-      <p class="item-desc">トレーニング後もスッキリ</p>
+      <p class="item-title">シャワー・ロッカー</p>
+      <p class="item-desc">運動後もスッキリ</p>
     </div>
   </div>
-  <table class="campaign-table fi">
-    <tbody>
-      <tr>
-        <td>キャンペーン期間</td>
-        <td>今月中のご予約で3,300円（通常6,600円）</td>
-      </tr>
-      <tr>
-        <td>対象</td>
-        <td>初回利用の方または1年以上ご利用のない方</td>
-      </tr>
-      <tr>
-        <td>申込方法</td>
-        <td>下記ボタンよりオンライン予約</td>
-      </tr>
-      <tr>
-        <td>料金</td>
-        <td>3,300円（税込）/ 通常6,600円</td>
-      </tr>
-    </tbody>
-  </table>
-  <div style="margin-top:1.8rem;" class="fi">
+  <p class="fi" style="font-size:.8rem;opacity:.6;margin-top:.5rem;">※初回利用または1年以上ご利用のない方限定 / 今月中のご予約で適用</p>
+  <div style="margin-top:1.5rem;" class="fi">
     <a class="btn-red" href="https://www.goldsgym-membership.jp/kengaku/visits/entry?MODE=2" target="_blank" rel="noopener noreferrer">
       2週間体験を予約する（3,300円）→
     </a>
@@ -2115,7 +2085,7 @@
 
     <div class="faq-item">
       <button class="faq-question" aria-expanded="false">
-        <span><span class="faq-q-mark">Q.</span> 申込みから利用開始まで何日かかりますか？</span>
+        <span><span class="faq-q-mark">Q.</span> 予約から何日で利用できますか？</span>
         <span class="faq-chevron">▼</span>
       </button>
       <div class="faq-answer">
@@ -2132,7 +2102,7 @@
 <section id="flow">
   <div class="fi">
     <span class="sec-label" style="border-color:rgba(245,197,0,.5);color:var(--gold);">HOW TO START</span>
-    <h2 style="margin-top:.5rem;">体験スタートまで、たった3ステップ</h2>
+    <h2 style="margin-top:.5rem;">2週間体験スタートまで<br>たった3ステップ</h2>
     <p class="sec-sub">予約はオンラインで2分。当日はスタッフがお出迎えします。</p>
   </div>
   <div class="flow-steps fi">
@@ -2140,7 +2110,7 @@
       <div class="flow-step-num">1</div>
       <div class="flow-step-body">
         <p class="flow-step-title">オンラインで予約（約2分）</p>
-        <p class="flow-step-desc">下のボタンから日程を選ぶだけ。電話不要・24時間受付。</p>
+        <p class="flow-step-desc">下のボタンから日程を選ぶだけ。<br>電話不要・24時間受付。</p>
       </div>
     </div>
     <div class="flow-step">
@@ -2154,7 +2124,7 @@
       <div class="flow-step-num">3</div>
       <div class="flow-step-body">
         <p class="flow-step-title">無料サポートで体験スタート</p>
-        <p class="flow-step-desc">マシン案内・目標ヒアリング・専用メニュー作成まで、全部無料サポート付きです。</p>
+        <p class="flow-step-desc">目標設定からメニュー作成まで、全部無料サポート付きです。</p>
       </div>
     </div>
   </div>
@@ -2171,7 +2141,7 @@
 <section id="final-cta">
   <div id="final-cta-bg"></div>
   <h2 class="fi">変われるかどうかを、<br>いきなり決めなくて大丈夫です。</h2>
-  <p class="sec-sub fi">まずは2週間、あなたの体に合う運動を一緒に見つけましょう。</p>
+  <p class="sec-sub fi">まずは2週間、<br>体に合う運動を一緒に見つけましょう。</p>
   <div class="fi">
     <a class="btn-red" href="https://www.goldsgym-membership.jp/kengaku/visits/entry?MODE=2" target="_blank" rel="noopener noreferrer">
       2週間体験を予約する（3,300円）→
@@ -2263,6 +2233,106 @@
       }
     });
   });
+
+  /* ========== TREND ANIMATIONS JS ========== */
+
+  /* 1. スクロールプログレスバー */
+  (function(){
+    const bar = document.getElementById('scroll-bar');
+    if(!bar) return;
+    window.addEventListener('scroll', function(){
+      const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
+      bar.style.width = Math.min(pct, 100) + '%';
+    }, {passive: true});
+  })();
+
+  /* 3. パララックス（Hero背景） */
+  (function(){
+    const hero = document.getElementById('hero');
+    if(!hero) return;
+    window.addEventListener('scroll', function(){
+      hero.style.backgroundPositionY = 'calc(22% + ' + (window.scrollY * .3) + 'px)';
+    }, {passive: true});
+  })();
+
+  /* 2. カウントアップ（.num要素） */
+  (function(){
+    const nums = document.querySelectorAll('.num');
+    if(!nums.length) return;
+    const parse = txt => {
+      const m = txt.match(/[\d,]+/);
+      return m ? parseInt(m[0].replace(/,/g,'')) : 0;
+    };
+    const format = (n, orig) => {
+      const hasPlus = orig.includes('+');
+      const hasTxt  = orig.replace(/[\d,+\s]/g,'');
+      return n.toLocaleString() + (hasPlus ? '+' : '') + hasTxt;
+    };
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(!entry.isIntersecting) return;
+        obs.unobserve(entry.target);
+        const el = entry.target;
+        const orig = el.textContent.trim();
+        const end  = parse(orig);
+        if(!end) return;
+        const dur = 1600;
+        const start = performance.now();
+        const tick = now => {
+          const elapsed = now - start;
+          const progress = Math.min(elapsed / dur, 1);
+          const ease = 1 - Math.pow(1 - progress, 3);
+          el.textContent = format(Math.round(end * ease), orig);
+          if(progress < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      });
+    }, {threshold: .5});
+    nums.forEach(n => obs.observe(n));
+  })();
+
+  /* 7. 価格フリップ（.cp-new） */
+  (function(){
+    const prices = document.querySelectorAll('.cp-new');
+    if(!prices.length) return;
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(!entry.isIntersecting) return;
+        obs.unobserve(entry.target);
+        entry.target.classList.add('price-popped');
+      });
+    }, {threshold: .4});
+    prices.forEach(p => obs.observe(p));
+  })();
+
+  /* 5. タイピング効果（PC限定、Hero h1） */
+  (function(){
+    if(window.innerWidth < 768) return;
+    const h1 = document.querySelector('#hero h1');
+    if(!h1) return;
+    const full = h1.innerHTML;
+    // プレーンテキストを抽出してタイピング
+    const plainText = h1.innerText;
+    h1.innerHTML = '';
+    h1.classList.add('typing-cursor');
+    let i = 0;
+    const speed = 55;
+    const type = () => {
+      if(i <= plainText.length){
+        // HTMLタグを保持してタイピング（単純にtextContentで描画）
+        h1.textContent = plainText.slice(0, i);
+        i++;
+        setTimeout(type, speed);
+      } else {
+        // タイピング完了後、元のHTML（spansなど）を復元
+        h1.innerHTML = full;
+        h1.classList.remove('typing-cursor');
+      }
+    };
+    setTimeout(type, 300);
+  })();
+
+  /* ========== END TREND ANIMATIONS JS ========== */
 
   /* ---- 悩み別タブ切り替え ---- */
   const worryTabBtns = document.querySelectorAll('.worry-tab-btn');

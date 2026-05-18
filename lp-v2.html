@@ -11,8 +11,10 @@
   <style>
     /* ===== RESET & BASE ===== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; overflow-x: hidden; }
-    html, body { max-width: 100%; }
+    html {
+      scroll-behavior: smooth;
+      overflow-x: clip; /* Safari対応: clip はscrollコンテナを作らずfixedも壊さない */
+    }
     body {
       font-family: 'Noto Sans JP', sans-serif;
       background: #F4F0E6;
@@ -21,6 +23,9 @@
       overflow-wrap: break-word;
       line-break: strict;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden; /* Safari: bodyにも必須 */
+      max-width: 100vw;
+      width: 100%;
     }
     @supports (word-break: auto-phrase) {
       body { word-break: auto-phrase; }
@@ -105,6 +110,12 @@
     /* ===== NO-SCROLLBAR ===== */
     .no-scrollbar::-webkit-scrollbar { display: none; }
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    /* ===== OVERFLOW GUARD (Safari iOS対応) ===== */
+    section, header, footer, main {
+      overflow-x: clip;
+      max-width: 100%;
+    }
 
     /* ===== BUTTONS ===== */
     .btn-red {
@@ -766,6 +777,7 @@
       background: #E0EEF5;
       padding: 4.5rem 1.25rem 5rem;
       color: #1a1a1a;
+      overflow: hidden;
     }
     #worry-tabs .sec-head {
       text-align: center;
@@ -931,6 +943,7 @@
       font-size: .72rem;
       color: #555;
       text-align: center;
+      overflow: hidden;
     }
 
     /* ===========================

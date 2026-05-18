@@ -1558,7 +1558,10 @@
       <p class="ca-origin-label">🌴 SINCE 1965 · VENICE BEACH, CALIFORNIA</p>
       <h2 class="ca-headline">SERIOUS FITNESS<br><span>FOR EVERYBODY</span></h2>
       <p class="ca-desc">
-        60年・700店舗のノウハウが、地元南船橋にあります。
+        Gold's Gymは1965年、カリフォルニア・ベニスビーチで誕生。<br>
+        世界中のアスリートから初心者まで、60年にわたり<br>
+        「結果を出す場所」として愛され続けてきた、フィットネスの聖地。<br>
+        そのノウハウとブランドが、地元南船橋にあります。
       </p>
     </div>
     <div class="ca-photo-card fi">
@@ -2266,7 +2269,9 @@
     const format = (n, orig) => {
       const hasPlus = orig.includes('+');
       const hasTxt  = orig.replace(/[\d,+\s]/g,'');
-      return n.toLocaleString() + (hasPlus ? '+' : '') + hasTxt;
+      // 年号（1900〜2100）はカンマなしでそのまま
+      const formatted = (n >= 1900 && n <= 2100) ? n.toString() : n.toLocaleString();
+      return formatted + (hasPlus ? '+' : '') + hasTxt;
     };
     const obs = new IntersectionObserver(entries => {
       entries.forEach(entry => {

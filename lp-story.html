@@ -1,0 +1,1621 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ゴールドジムに通い始めた人だけが知る、体の変わり方。｜Gold's Gym 南船橋千葉店</title>
+  <meta name="description" content="2週間の旅が、あなたを別人にする。Gold's Gym 南船橋千葉店の2週間体験キャンペーン 3,300円（税込）。初回限定・自動入会なし。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    /* ==============================
+       DESIGN TOKENS
+    ============================== */
+    :root {
+      --gold:    #F5C500;
+      --gold-l:  #FFE033;
+      --gold-d:  #C9A000;
+      --red:     #C93333;
+      --black:   #1a1a1a;
+      --cream:   #F4F0E6;
+      --ca-dark: #1C3A4A;
+      --white:   #FFFFFF;
+      --muted:   #888;
+      --text:    #1a1a1a;
+    }
+
+    /* ==============================
+       RESET
+    ============================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: clip;
+    }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 16px;
+      color: var(--text);
+      background: var(--white);
+      word-break: keep-all;
+      overflow-wrap: anywhere;
+      line-break: strict;
+      overflow-x: hidden;
+      max-width: 100vw;
+      line-height: 1.75;
+    }
+
+    section, header, footer {
+      overflow-x: clip;
+      max-width: 100%;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a   { color: inherit; text-decoration: none; }
+
+    /* ==============================
+       FADE-IN
+    ============================== */
+    .fi {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fi.in {
+      opacity: 1;
+      transform: none;
+    }
+    .fi-d1 { transition-delay: 0.1s; }
+    .fi-d2 { transition-delay: 0.2s; }
+    .fi-d3 { transition-delay: 0.3s; }
+    .fi-d4 { transition-delay: 0.4s; }
+
+    /* ==============================
+       BUTTONS
+    ============================== */
+    .btn-red {
+      display: block;
+      width: 100%;
+      background: var(--red);
+      color: var(--white);
+      font-size: 17px;
+      font-weight: 700;
+      text-align: center;
+      padding: 22px 24px;
+      border-radius: 4px;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      border: none;
+      line-height: 1.4;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-red::after {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+      animation: shimmer 2.2s infinite;
+    }
+    @keyframes shimmer {
+      0%   { left: -100%; }
+      100% { left: 160%; }
+    }
+    .btn-red:hover { background: #a82222; transform: translateY(-2px); }
+
+    .btn-gold {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--black);
+      font-size: 15px;
+      font-weight: 700;
+      padding: 14px 32px;
+      border-radius: 4px;
+      letter-spacing: 0.04em;
+      transition: background 0.2s;
+    }
+    .btn-gold:hover { background: var(--gold-l); }
+
+    /* ==============================
+       LABEL / CHAPTER MARK
+    ============================== */
+    .chapter-mark {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold-d);
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-size: clamp(24px, 6vw, 36px);
+      font-weight: 900;
+      line-height: 1.3;
+      margin-bottom: 20px;
+    }
+
+    .section-sub {
+      font-size: 15px;
+      color: #555;
+      line-height: 1.85;
+      margin-bottom: 40px;
+    }
+
+    .inner {
+      max-width: 560px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ==============================
+       HEADER (fixed)
+    ============================== */
+    #site-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 999;
+      background: rgba(26, 26, 26, 0.96);
+      backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      height: 56px;
+    }
+    #site-header .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    #site-header .logo-wrap img {
+      height: 32px;
+      width: auto;
+    }
+    #site-header .store-name {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.05em;
+      line-height: 1.3;
+    }
+    #site-header .store-name span {
+      display: block;
+      font-size: 10px;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+    }
+    #site-header .header-cta {
+      background: var(--red);
+      color: var(--white);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 8px 14px;
+      border-radius: 4px;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+
+    /* ==============================
+       HERO
+    ============================== */
+    #hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding-bottom: 80px;
+      overflow: hidden;
+    }
+    #hero .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('training-top.png') center center / cover no-repeat;
+      transform: scale(1.04);
+      animation: hero-zoom 12s ease-out forwards;
+    }
+    @keyframes hero-zoom {
+      from { transform: scale(1.08); }
+      to   { transform: scale(1.00); }
+    }
+    #hero .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.15) 0%,
+        rgba(0,0,0,0.55) 60%,
+        rgba(0,0,0,0.82) 100%
+      );
+    }
+    #hero .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 20px;
+      max-width: 560px;
+      margin: 0 auto;
+      width: 100%;
+      opacity: 0;
+      animation: hero-fadein 1.1s 0.4s ease forwards;
+    }
+    @keyframes hero-fadein {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: none; }
+    }
+    #hero .hero-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    #hero .hero-title {
+      font-size: clamp(26px, 7.5vw, 44px);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.25;
+      margin-bottom: 20px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    }
+    #hero .hero-title em {
+      color: var(--gold);
+      font-style: normal;
+    }
+    #hero .hero-sub {
+      font-size: 16px;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 32px;
+      line-height: 1.7;
+    }
+    #hero .price-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 6px;
+      padding: 10px 16px;
+      margin-bottom: 20px;
+    }
+    #hero .price-badge .original {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      text-decoration: line-through;
+    }
+    #hero .price-badge .price {
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--gold);
+    }
+    #hero .price-badge .tax {
+      font-size: 12px;
+      color: rgba(255,255,255,0.7);
+    }
+    #hero .price-badge .off-tag {
+      background: var(--red);
+      color: var(--white);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 8px;
+      border-radius: 3px;
+    }
+    #hero .hero-btn-wrap {
+      max-width: 400px;
+    }
+    #hero .scroll-hint {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+    #hero .scroll-hint span {
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+    }
+    #hero .scroll-hint .arrow {
+      width: 20px;
+      height: 20px;
+      border-right: 2px solid rgba(255,255,255,0.4);
+      border-bottom: 2px solid rgba(255,255,255,0.4);
+      transform: rotate(45deg);
+      animation: bounce 1.6s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: rotate(45deg) translateY(0); }
+      50%       { transform: rotate(45deg) translateY(6px); }
+    }
+
+    /* ==============================
+       PROLOGUE
+    ============================== */
+    #prologue {
+      background: var(--cream);
+      padding: 80px 0;
+    }
+    #prologue .prose {
+      font-size: 16px;
+      line-height: 2;
+      color: #333;
+    }
+    #prologue .prose p { margin-bottom: 24px; }
+    #prologue .prose .big-q {
+      font-size: clamp(20px, 5vw, 28px);
+      font-weight: 900;
+      color: var(--black);
+      line-height: 1.4;
+      margin-bottom: 32px;
+      padding-left: 16px;
+      border-left: 4px solid var(--gold);
+    }
+    #prologue .prose .emphasis {
+      color: var(--red);
+      font-weight: 700;
+    }
+
+    /* ==============================
+       JOURNEY (DAY)
+    ============================== */
+    #journey {
+      background: var(--ca-dark);
+      padding: 80px 0;
+      color: var(--white);
+    }
+    #journey .journey-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    #journey .journey-header .chapter-mark { color: var(--gold); }
+    #journey .journey-header .section-title { color: var(--white); }
+    #journey .journey-header .section-sub   { color: rgba(255,255,255,0.6); margin-bottom: 0; }
+
+    .day-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .day-item {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 0 20px;
+      position: relative;
+    }
+    .day-item:not(:last-child)::before {
+      content: '';
+      position: absolute;
+      left: 40px;
+      top: 60px;
+      bottom: -20px;
+      width: 2px;
+      background: linear-gradient(to bottom, rgba(245,197,0,0.6), rgba(245,197,0,0.05));
+    }
+    .day-item .day-marker {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 4px;
+    }
+    .day-item .day-dot {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .day-item .day-dot span {
+      font-size: 9px;
+      font-weight: 900;
+      color: var(--black);
+      letter-spacing: 0.06em;
+      text-align: center;
+      line-height: 1.2;
+    }
+    .day-item .day-body {
+      padding: 4px 0 56px 0;
+    }
+    .day-item .day-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .day-item .day-title {
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 12px;
+      line-height: 1.35;
+    }
+    .day-item .day-text {
+      font-size: 14px;
+      line-height: 1.9;
+      color: rgba(255,255,255,0.72);
+    }
+    .day-item .day-quote {
+      margin-top: 14px;
+      padding: 12px 16px;
+      background: rgba(245,197,0,0.1);
+      border-left: 3px solid var(--gold);
+      font-size: 13px;
+      font-style: italic;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.75;
+    }
+    .day-item .day-img {
+      margin-top: 16px;
+      border-radius: 8px;
+      overflow: hidden;
+      aspect-ratio: 16/9;
+      width: 100%;
+    }
+    .day-item .day-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ==============================
+       EXPERIENCE
+    ============================== */
+    #experience {
+      background: var(--white);
+      padding: 80px 0;
+    }
+    .exp-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 40px;
+    }
+    .exp-card {
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+      aspect-ratio: 3/4;
+    }
+    .exp-card.wide {
+      grid-column: 1 / -1;
+      aspect-ratio: 16/7;
+    }
+    .exp-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .exp-card:hover img { transform: scale(1.04); }
+    .exp-card .card-label {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.75), transparent);
+      padding: 28px 16px 14px;
+    }
+    .exp-card .card-label h3 {
+      font-size: 14px;
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+    .exp-card .card-label p {
+      font-size: 11px;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.5;
+    }
+    .exp-list {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .exp-list-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 18px;
+      background: var(--cream);
+      border-radius: 8px;
+    }
+    .exp-list-item .icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 18px;
+    }
+    .exp-list-item .text h4 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .exp-list-item .text p {
+      font-size: 13px;
+      color: #666;
+      line-height: 1.65;
+    }
+
+    /* ==============================
+       VOICES
+    ============================== */
+    #voices {
+      background: var(--black);
+      padding: 80px 0;
+    }
+    #voices .chapter-mark { color: var(--gold); }
+    #voices .section-title { color: var(--white); }
+    .voice-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .voice-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 28px 22px;
+      position: relative;
+    }
+    .voice-card::before {
+      content: '\201C';
+      position: absolute;
+      top: 16px; left: 18px;
+      font-size: 60px;
+      color: var(--gold);
+      opacity: 0.35;
+      line-height: 1;
+      font-family: Georgia, serif;
+    }
+    .voice-card .voice-tag {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.15em;
+      margin-bottom: 10px;
+    }
+    .voice-card .voice-headline {
+      font-size: 18px;
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 14px;
+      line-height: 1.4;
+    }
+    .voice-card .voice-text {
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.85;
+    }
+    .voice-card .voice-person {
+      margin-top: 16px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.45);
+    }
+    .voice-disclaimer {
+      margin-top: 32px;
+      padding: 16px;
+      background: rgba(255,255,255,0.04);
+      border-radius: 6px;
+      font-size: 11px;
+      color: rgba(255,255,255,0.35);
+      line-height: 1.7;
+      text-align: center;
+    }
+
+    /* ==============================
+       CAMPAIGN DETAILS
+    ============================== */
+    #campaign {
+      background: var(--cream);
+      padding: 80px 0;
+    }
+    .campaign-box {
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.08);
+    }
+    .campaign-box .camp-header {
+      background: var(--black);
+      padding: 28px 24px;
+      text-align: center;
+    }
+    .campaign-box .camp-header .price-main {
+      font-size: clamp(40px, 10vw, 60px);
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .campaign-box .camp-header .price-main span {
+      font-size: 18px;
+    }
+    .campaign-box .camp-header .price-orig {
+      font-size: 14px;
+      color: rgba(255,255,255,0.5);
+    }
+    .campaign-box .camp-header .price-orig s { margin-right: 8px; }
+    .campaign-box .camp-header .price-orig strong {
+      color: var(--red);
+      font-weight: 700;
+    }
+    .campaign-box .camp-body {
+      padding: 28px 24px;
+    }
+    .camp-cond-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+    .camp-cond-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 14px;
+      line-height: 1.65;
+    }
+    .camp-cond-list li .icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 11px;
+      font-weight: 700;
+      margin-top: 1px;
+    }
+    .guarantee-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .guarantee-badge {
+      flex: 1;
+      text-align: center;
+      background: var(--cream);
+      border-radius: 8px;
+      padding: 14px 10px;
+    }
+    .guarantee-badge .g-icon { font-size: 24px; margin-bottom: 6px; }
+    .guarantee-badge .g-text {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--black);
+      line-height: 1.4;
+    }
+
+    /* ==============================
+       FLOW
+    ============================== */
+    #flow {
+      background: var(--white);
+      padding: 80px 0;
+    }
+    .flow-steps {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .flow-step {
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 0 18px;
+      position: relative;
+    }
+    .flow-step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 26px;
+      top: 52px;
+      bottom: -8px;
+      width: 2px;
+      background: var(--gold);
+      opacity: 0.3;
+    }
+    .flow-step .step-num {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--black);
+      flex-shrink: 0;
+    }
+    .flow-step .step-body {
+      padding: 8px 0 44px 0;
+    }
+    .flow-step .step-body h3 {
+      font-size: 17px;
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+    .flow-step .step-body p {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.7;
+    }
+
+    /* ==============================
+       FAQ
+    ============================== */
+    #faq {
+      background: var(--cream);
+      padding: 80px 0;
+    }
+    .faq-list {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .faq-item {
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+    .faq-item:first-child { border-top: 1px solid rgba(0,0,0,0.1); }
+    .faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 20px 0;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .faq-q .q-mark {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: var(--black);
+      font-size: 13px;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .faq-q .q-text {
+      font-size: 15px;
+      font-weight: 700;
+      flex: 1;
+      color: var(--black);
+      line-height: 1.5;
+    }
+    .faq-q .q-arrow {
+      width: 20px;
+      height: 20px;
+      color: var(--muted);
+      flex-shrink: 0;
+      transition: transform 0.3s;
+    }
+    .faq-item.open .q-arrow { transform: rotate(180deg); }
+    .faq-a {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.85;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.3s;
+      padding: 0 42px;
+    }
+    .faq-item.open .faq-a {
+      max-height: 300px;
+      padding-bottom: 20px;
+    }
+
+    /* ==============================
+       FINAL CTA
+    ============================== */
+    #final-cta {
+      background: var(--ca-dark);
+      padding: 80px 0 100px;
+      text-align: center;
+    }
+    #final-cta .big-copy {
+      font-size: clamp(22px, 6vw, 38px);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.35;
+      margin-bottom: 12px;
+    }
+    #final-cta .big-copy em {
+      color: var(--gold);
+      font-style: normal;
+    }
+    #final-cta .sub-copy {
+      font-size: 15px;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 36px;
+      line-height: 1.75;
+    }
+    #final-cta .price-note {
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+      margin-top: 12px;
+    }
+
+    /* ==============================
+       STICKY CTA (mobile bottom bar)
+    ============================== */
+    #sticky-cta {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 900;
+      padding: 12px 16px;
+      background: rgba(26,26,26,0.96);
+      backdrop-filter: blur(6px);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      display: none;
+    }
+    #sticky-cta.visible { display: block; }
+
+    /* ==============================
+       FOOTER
+    ============================== */
+    footer {
+      background: var(--black);
+      padding: 40px 20px;
+      text-align: center;
+    }
+    footer .footer-logo img {
+      height: 28px;
+      width: auto;
+      margin: 0 auto 12px;
+      opacity: 0.7;
+    }
+    footer .store-info {
+      font-size: 12px;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.9;
+    }
+    footer .copy {
+      margin-top: 20px;
+      font-size: 11px;
+      color: rgba(255,255,255,0.25);
+    }
+
+    /* ==============================
+       DESKTOP TWEAKS
+    ============================== */
+    @media (min-width: 640px) {
+      .inner { padding: 0 32px; }
+      .exp-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .exp-card.wide {
+        grid-column: 1 / -1;
+        aspect-ratio: 21/7;
+      }
+      #sticky-cta { display: none !important; }
+    }
+
+    /* ==============================
+       SPACER FOR FIXED HEADER
+    ============================== */
+    .header-spacer { height: 56px; }
+
+    /* ==============================
+       NUMBER COUNTER
+    ============================== */
+    .count-num {
+      font-size: clamp(32px, 8vw, 56px);
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .stats-row {
+      display: flex;
+      gap: 0;
+      justify-content: space-around;
+      margin: 40px 0;
+      text-align: center;
+    }
+    .stat-item .stat-label {
+      font-size: 12px;
+      color: rgba(255,255,255,0.55);
+      margin-top: 6px;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==============================
+       FIXED HEADER
+  ============================== -->
+  <header id="site-header">
+    <div class="logo-wrap">
+      <img src="ロゴ.png" alt="Gold's Gym" />
+      <div class="store-name">
+        南船橋千葉店
+        <span>Gold's Gym</span>
+      </div>
+    </div>
+    <a class="header-cta" href="https://www.goldsgym-membership.jp/kengaku/visits/entry?MODE=2" target="_blank" rel="noopener">
+      2週間体験 →
+    </a>
+  </header>
+
+  <div class="header-spacer"></div>
+
+  <!-- ==============================
+       HERO
+  ============================== -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Gold's Gym 南船橋千葉店 · 2週間体験キャンペーン</p>
+      <h1 class="hero-title">
+        ゴールドジムに通い始めた人だけが知る、<em>体の変わり方。</em>
+      </h1>
+      <p class="hero-sub">
+        2週間の旅が、あなたを別人にする。
+      </p>
+      <div class="price-badge">
+        <span class="original">通常 6,600円</span>
+        <span class="price">¥3,300</span>
+        <span class="tax">税込</span>
+        <span class="off-tag">50%OFF</span>
+      </div>
+      <div class="hero-btn-wrap">
+        <a class="btn-red" href="https://www.goldsgym-membership.jp/kengaku/visits/entry?MODE=2" target="_blank" rel="noopener">
+          2週間体験を始める（3,300円）→
+        </a>
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <span>Scroll</span>
+      <div class="arrow"></div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       PROLOGUE
+  ============================== -->
+  <section id="prologue">
+    <div class="inner">
+      <p class="chapter-mark fi">Chapter 01 · Prologue</p>
+      <div class="prose fi fi-d1">
+        <p class="big-q">
+          あなたは今、岐路に立っている。
+        </p>
+        <p>
+          体力が落ちたと感じるようになったのは、いつ頃からだろう。
+          階段を上るとき、少し息が乱れる。以前は気にならなかった体の重さを、今は意識してしまう。
+        </p>
+        <p>
+          「運動しなきゃ」と思い続けて、気づけば何ヶ月も経っていた。
+          ジムに行きたい気持ちはある。でも――<span class="emphasis">最初の一歩が、遠い。</span>
+        </p>
+        <p>
+          初めての場所で、初めての機械。まわりは鍛えた人ばかりかもしれない。
+          そんな不安が、背中を押す手を止めていた。
+        </p>
+        <p>
+          それは、あなただけじゃない。<br />
+          ゴールドジムに通い始めたほとんどの人が、同じ不安を持っていた。<br />
+          そしてその多くが、2週間後に気づく。
+        </p>
+        <p class="big-q" style="font-size: clamp(18px, 4.5vw, 24px);">
+          「なぜもっと早く来なかったんだろう。」
+        </p>
+        <p>
+          これは、その2週間の物語だ。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       JOURNEY
+  ============================== -->
+  <section id="journey">
+    <div class="inner">
+      <div class="journey-header fi">
+        <p class="chapter-mark">Chapter 02 · The Journey</p>
+        <h2 class="section-title">14日間の旅</h2>
+        <p class="section-sub">
+          あなたに起きるかもしれない変化を、<br />日を追って描いてみた。
+        </p>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats-row fi">
+        <div class="stat-item">
+          <div class="count-num" data-target="70">0</div>
+          <div class="stat-label">週70本以上<br />スタジオ講座</div>
+        </div>
+        <div class="stat-item">
+          <div class="count-num" data-target="14">0</div>
+          <div class="stat-label">14日間<br />使い放題</div>
+        </div>
+        <div class="stat-item">
+          <div class="count-num" data-target="0">0</div>
+          <div class="stat-label">自動入会<br />なし</div>
+        </div>
+      </div>
+
+      <div class="day-list">
+
+        <!-- DAY 1 -->
+        <div class="day-item fi">
+          <div class="day-marker">
+            <div class="day-dot">
+              <span>DAY<br />1</span>
+            </div>
+          </div>
+          <div class="day-body">
+            <p class="day-label">Day 1 · First Step</p>
+            <h3 class="day-title">「最初の一歩」</h3>
+            <p class="day-text">
+              入口を入ると、スタッフが出迎えてくれた。
+              笑顔で名前を聞かれ、ジムを案内してくれる。
+              マシンの使い方、どこに何があるか。
+              不安だったことが、一つずつ解けていく。
+            </p>
+            <p class="day-text">
+              広々としたフロアに、最新のマシンが並ぶ。
+              圧倒されながらも、まずはトレッドミルに乗ってみた。
+            </p>
+            <div class="day-quote">
+              「続けられるかな」という不安が、<br />
+              「やってみよう」という気持ちに変わった、最初の日。
+            </div>
+            <div class="day-img">
+              <img src="サポート写真.PNG" alt="スタッフによるサポート" loading="lazy" />
+            </div>
+          </div>
+        </div>
+
+        <!-- DAY 3 -->
+        <div class="day-item fi">
+          <div class="day-marker">
+            <div class="day-dot">
+              <span>DAY<br />3</span>
+            </div>
+          </div>
+          <div class="day-body">
+            <p class="day-label">Day 3 · Warming Up</p>
+            <h3 class="day-title">「体が温まってきた」</h3>
+            <p class="day-text">
+              3日目、体を動かすと思ったより体が軽い。
+              最初の筋肉痛も、不思議と悪い気がしなかった。
+              「ちゃんと使ったんだ」という、確かな感覚。
+            </p>
+            <p class="day-text">
+              スタッフが声をかけてくれた。
+              もう名前を覚えてくれている。
+              「今日はスタジオでヨガがありますよ」と教えてくれた。
+            </p>
+            <div class="day-quote">
+              はじめてスタジオのドアを開けた瞬間、<br />
+              知らない世界が広がっていた。
+            </div>
+            <div class="day-img">
+              <img src="スタジオ1.png" alt="スタジオ" loading="lazy" />
+            </div>
+          </div>
+        </div>
+
+        <!-- DAY 7 -->
+        <div class="day-item fi">
+          <div class="day-marker">
+            <div class="day-dot">
+              <span>DAY<br />7</span>
+            </div>
+          </div>
+          <div class="day-body">
+            <p class="day-label">Day 7 · The Change Begins</p>
+            <h3 class="day-title">「変化の予感」</h3>
+            <p class="day-text">
+              1週間が経った。体重計には乗っていない。
+              でも、体の感覚が変わってきた気がする。
+              朝の目覚めが、少し違う。肩の重さが、軽い。
+            </p>
+            <p class="day-text">
+              フリーウエイトエリアにも、少しずつ足を踏み入れるようになった。
+              トレーナーがフォームを教えてくれる。
+              「もっとこう動かすと効きますよ」──その一言で、体の使い方が変わった。
+            </p>
+            <div class="day-quote">
+              数字ではなく、体が変わっていくのを感じていた。
+            </div>
+            <div class="day-img">
+              <img src="フリーウエイト.jpg" alt="フリーウエイトエリア" loading="lazy" />
+            </div>
+          </div>
+        </div>
+
+        <!-- DAY 14 -->
+        <div class="day-item fi">
+          <div class="day-marker">
+            <div class="day-dot" style="background: var(--gold-l); box-shadow: 0 0 0 6px rgba(245,197,0,0.2);">
+              <span>DAY<br />14</span>
+            </div>
+          </div>
+          <div class="day-body">
+            <p class="day-label">Day 14 · A New Beginning</p>
+            <h3 class="day-title">「旅の終わり、または始まり」</h3>
+            <p class="day-text">
+              2週間が経った。
+              最初は不安だったマシンの使い方も、もう体が覚えている。
+              スタジオのインストラクターの名前も、顔も知っている。
+            </p>
+            <p class="day-text">
+              体重は変わっていないかもしれない。
+              でも、鏡の前の自分は、2週間前と確かに違う。
+              もっと大切なことが変わった。
+            </p>
+            <div class="day-quote">
+              「もう少し続けてみよう」と思っている自分がいる。<br /><br />
+              それが、本当の旅の始まりだ。
+            </div>
+            <div class="day-img">
+              <img src="ジムエリア1.jpg" alt="ジムエリア" loading="lazy" />
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /day-list -->
+    </div>
+  </section>
+
+  <!-- ==============================
+       EXPERIENCE
+  ============================== -->
+  <section id="experience">
+    <div class="inner">
+      <p class="chapter-mark fi">Chapter 03 · What You'll Experience</p>
+      <h2 class="section-title fi fi-d1">旅の中で出会える、すべて。</h2>
+      <p class="section-sub fi fi-d2">
+        2週間の体験で、これらすべてが使い放題。
+      </p>
+
+      <div class="exp-grid fi fi-d2">
+        <div class="exp-card wide">
+          <img src="カーディオエリア.jpg" alt="カーディオエリア" loading="lazy" />
+          <div class="card-label">
+            <h3>カーディオエリア</h3>
+            <p>最新マシンが並ぶ、広大なカーディオゾーン</p>
+          </div>
+        </div>
+        <div class="exp-card">
+          <img src="フリーウエイト.jpg" alt="フリーウエイト" loading="lazy" />
+          <div class="card-label">
+            <h3>フリーウエイト</h3>
+            <p>本格的な器具が勢揃い</p>
+          </div>
+        </div>
+        <div class="exp-card">
+          <img src="スタジオ1.png" alt="スタジオ" loading="lazy" />
+          <div class="card-label">
+            <h3>スタジオ</h3>
+            <p>週70本以上のプログラム</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-list fi fi-d3">
+        <div class="exp-list-item">
+          <div class="icon">🏋️</div>
+          <div class="text">
+            <h4>全施設使い放題</h4>
+            <p>最新マシン・カーディオ・フリーウエイト・スタジオ。2週間のあいだ、すべて自由に使えます。</p>
+          </div>
+        </div>
+        <div class="exp-list-item">
+          <div class="icon">🎯</div>
+          <div class="text">
+            <h4>週70本以上のスタジオプログラム</h4>
+            <p>ヨガ、ピラティス、HIIT、ダンス系など多彩なクラスが毎週開催されています。</p>
+          </div>
+        </div>
+        <div class="exp-list-item">
+          <div class="icon">💪</div>
+          <div class="text">
+            <h4>トレーナーによる無料サポート・メニュー相談</h4>
+            <p>初めての方のフォームチェック、目標に合わせたメニュー提案。プロが隣にいます。</p>
+          </div>
+        </div>
+        <div class="exp-list-item">
+          <div class="icon">🚿</div>
+          <div class="text">
+            <h4>シャワー・ロッカー完備</h4>
+            <p>仕事帰りにも通いやすい、充実した施設。手ぶらでも安心です。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       VOICES
+  ============================== -->
+  <section id="voices">
+    <div class="inner">
+      <p class="chapter-mark fi">Chapter 04 · Voices</p>
+      <h2 class="section-title fi fi-d1">旅を終えた人の声</h2>
+
+      <div class="voice-list">
+
+        <div class="voice-card fi">
+          <p class="voice-tag">40代女性 · 入会後3ヶ月</p>
+          <h3 class="voice-headline">
+            「体重より、体型が変わった。」
+          </h3>
+          <p class="voice-text">
+            最初は「ジムに行く人」のイメージが自分に合わないと思っていました。
+            でも2週間試してみたら、スタッフの方がとても親切で、居心地がいい場所だと気づいたんです。
+            体重の変化よりも、体のラインが変わってきたのがうれしくて。今では週3回通っています。
+          </p>
+          <p class="voice-person">※個人の感想です。</p>
+        </div>
+
+        <div class="voice-card fi fi-d1">
+          <p class="voice-tag">50代男性 · 入会後6ヶ月</p>
+          <h3 class="voice-headline">
+            「10年悩んだ腰が、3ヶ月で楽になった。」
+          </h3>
+          <p class="voice-text">
+            長年デスクワークで腰痛に悩んでいました。ジムで体幹トレーニングを続けたら、
+            仕事中の腰の重さが全然違うんです。
+            「もっと早く来ればよかった」と本当に思っています。
+            2週間体験で背中を押してもらえてよかったです。
+          </p>
+          <p class="voice-person">※個人の感想です。</p>
+        </div>
+
+        <div class="voice-card fi fi-d2">
+          <p class="voice-tag">60代男性 · 入会後1年</p>
+          <h3 class="voice-headline">
+            「最初は歩くのもつらかった。今は5km走れる。」
+          </h3>
+          <p class="voice-text">
+            退職後、体が急に衰えた気がして。最初にトレッドミルに乗ったとき、
+            10分で息が切れました。でもトレーナーが焦らせず、丁寧に進めてくれて。
+            1年経った今、週2回ジムに来て、外でも走るようになりました。
+            人生でいちばん健康かもしれない。
+          </p>
+          <p class="voice-person">※個人の感想です。</p>
+        </div>
+
+      </div>
+
+      <p class="voice-disclaimer fi">
+        ※個人の感想です。効果には個人差があります。同様の結果を保証するものではありません。
+      </p>
+    </div>
+  </section>
+
+  <!-- ==============================
+       CAMPAIGN DETAILS
+  ============================== -->
+  <section id="campaign">
+    <div class="inner">
+      <p class="chapter-mark fi">Chapter 05 · Campaign</p>
+      <h2 class="section-title fi fi-d1">旅の料金</h2>
+
+      <div class="campaign-box fi fi-d2">
+        <div class="camp-header">
+          <div class="price-main">¥<span>3,300</span><small style="font-size:16px;color:rgba(255,255,255,0.6);margin-left:4px;">（税込）</small></div>
+          <div class="price-orig"><s>通常 6,600円</s> <strong>→ 50% OFF</strong></div>
+        </div>
+        <div class="camp-body">
+          <ul class="camp-cond-list">
+            <li>
+              <span class="icon">✓</span>
+              <span><strong>期間：</strong>2週間（14日間）全施設使い放題</span>
+            </li>
+            <li>
+              <span class="icon">✓</span>
+              <span><strong>対象：</strong>未入会の方・初回限定・1名1回</span>
+            </li>
+            <li>
+              <span class="icon">✓</span>
+              <span><strong>自動入会なし。</strong>2週間後に続けるかどうかはご自身で決めていただけます。</span>
+            </li>
+            <li>
+              <span class="icon">✓</span>
+              <span><strong>無理な勧誘なし。</strong>お気持ちに寄り添ったご案内を心がけています。</span>
+            </li>
+          </ul>
+          <div class="guarantee-row">
+            <div class="guarantee-badge">
+              <div class="g-icon">🔒</div>
+              <div class="g-text">自動入会<br />なし</div>
+            </div>
+            <div class="guarantee-badge">
+              <div class="g-icon">🤝</div>
+              <div class="g-text">無理な<br />勧誘なし</div>
+            </div>
+            <div class="guarantee-badge">
+              <div class="g-icon">✨</div>
+              <div class="g-text">初心者<br />大歓迎</div>
+            </div>
+          </div>
+          <br />
+          <a class="btn-red" href="https://www.goldsgym-membership.jp/kengaku/visits/entry?MODE=2" target="_blank" rel="noopener">
+            2週間体験を申し込む →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       FLOW
+  ============================== -->
+  <section id="flow">
+    <div class="inner">
+      <p class="chapter-mark fi">Chapter 06 · How to Start</p>
+      <h2 class="section-title fi fi-d1">旅の始め方、3ステップ。</h2>
+
+      <div class="flow-steps fi fi-d2">
+        <div class="flow-step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h3>下のボタンから予約（2分）</h3>
+            <p>オンラインフォームに必要事項を入力するだけ。お電話不要です。</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h3>当日、スタッフがお出迎え</h3>
+            <p>初日はスタッフが施設をご案内します。持ち物の不安もその場で解消できます。</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <h3>2週間の旅スタート</h3>
+            <p>あとは来るだけ。あなたのペースで、体の変化を感じてください。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="fi fi-d3" style="margin-top: 40px;">
+        <a class="btn-red" href="https://www.goldsgym-membership.jp/kengaku/visits/entry?MODE=2" target="_blank" rel="noopener">
+          2週間体験を申し込む →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       FAQ
+  ============================== -->
+  <section id="faq">
+    <div class="inner">
+      <p class="chapter-mark fi">Chapter 07 · FAQ</p>
+      <h2 class="section-title fi fi-d1">よくある質問</h2>
+
+      <div class="faq-list fi fi-d2">
+
+        <div class="faq-item">
+          <button class="faq-q">
+            <span class="q-mark">Q</span>
+            <span class="q-text">ジムが初めてでも大丈夫ですか？</span>
+            <svg class="q-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          <div class="faq-a">
+            もちろんです。初めての方こそ、歓迎しています。初日はスタッフが施設をご案内し、マシンの使い方を丁寧にご説明します。一人で来られる方がほとんどです。
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            <span class="q-mark">Q</span>
+            <span class="q-text">持ち物は何が必要ですか？</span>
+            <svg class="q-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          <div class="faq-a">
+            運動できる服装、室内シューズ、タオル、飲み物があれば大丈夫です。ロッカー・シャワーも完備しています。レンタル品のご用意もあります。詳しくは当日スタッフにお尋ねください。
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            <span class="q-mark">Q</span>
+            <span class="q-text">2週間後に自動で入会になりますか？</span>
+            <svg class="q-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          <div class="faq-a">
+            なりません。2週間の体験終了後は、続けるかどうかをご自身で決めていただけます。自動引き落としや自動入会は一切ありません。
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            <span class="q-mark">Q</span>
+            <span class="q-text">キャンセルはできますか？</span>
+            <svg class="q-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          <div class="faq-a">
+            ご予約後のキャンセルについては、お早めにお電話またはオンラインフォームよりご連絡ください。詳細はご予約確認メールをご確認ください。
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            <span class="q-mark">Q</span>
+            <span class="q-text">入会を勧められることはありますか？</span>
+            <svg class="q-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          <div class="faq-a">
+            体験期間中に、ご興味をお持ちの方にはご案内をすることがありますが、無理な勧誘は行っておりません。2週間後に「続けたい」と思っていただけることが、私たちの願いです。
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       FINAL CTA
+  ============================== -->
+  <section id="final-cta">
+    <div class="inner">
+      <p class="chapter-mark fi" style="color: var(--gold);">Final Chapter · Your Journey Awaits</p>
+      <h2 class="big-copy fi fi-d1">
+        2週間後の自分を、<br /><em>見てみませんか。</em>
+      </h2>
+      <p class="sub-copy fi fi-d2">
+        最初の一歩は、小さくていい。<br />
+        ゴールドジム南船橋千葉店で、あなたの旅が始まる。
+      </p>
+      <div class="fi fi-d3" style="max-width: 400px; margin: 0 auto;">
+        <a class="btn-red" href="https://www.goldsgym-membership.jp/kengaku/visits/entry?MODE=2" target="_blank" rel="noopener">
+          2週間体験を始める（3,300円）→
+        </a>
+        <p class="price-note">通常 6,600円 → 50%OFF ／ 初回限定・自動入会なし</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       FOOTER
+  ============================== -->
+  <footer>
+    <div class="footer-logo">
+      <img src="ロゴ.png" alt="Gold's Gym" />
+    </div>
+    <p class="store-info">
+      Gold's Gym 南船橋千葉店<br />
+      〒273-0011 千葉県船橋市浜町2-2-7<br />
+      ららぽーとTOKYO-BAY North Gate 4F
+    </p>
+    <p class="copy">&copy; Gold's Gym. All rights reserved.</p>
+  </footer>
+
+  <!-- ==============================
+       STICKY CTA (mobile)
+  ============================== -->
+  <div id="sticky-cta">
+    <a class="btn-red" href="https://www.goldsgym-membership.jp/kengaku/visits/entry?MODE=2" target="_blank" rel="noopener">
+      2週間体験を申し込む（3,300円）→
+    </a>
+  </div>
+
+  <!-- ==============================
+       SCRIPTS
+  ============================== -->
+  <script>
+    /* ---- Fade-in via IntersectionObserver ---- */
+    const fiEls = document.querySelectorAll('.fi');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.05 });
+    fiEls.forEach(el => observer.observe(el));
+
+    /* ---- Fallback: show all fi elements if IO never fires (e.g. prefers-reduced-motion) ---- */
+    setTimeout(() => {
+      document.querySelectorAll('.fi:not(.in)').forEach(el => el.classList.add('in'));
+    }, 2000);
+
+    /* ---- Sticky CTA show/hide ---- */
+    const stickyCta = document.getElementById('sticky-cta');
+    const heroEl    = document.getElementById('hero');
+    if (stickyCta && heroEl) {
+      const stickyObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          stickyCta.classList.toggle('visible', !entry.isIntersecting);
+        });
+      }, { threshold: 0 });
+      stickyObserver.observe(heroEl);
+    }
+
+    /* ---- FAQ accordion ---- */
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+
+    /* ---- Count-up ---- */
+    function countUp(el, target, duration) {
+      let start = 0;
+      const step = Math.ceil(target / (duration / 16));
+      const timer = setInterval(() => {
+        start += step;
+        if (start >= target) {
+          el.textContent = target;
+          clearInterval(timer);
+        } else {
+          el.textContent = start;
+        }
+      }, 16);
+    }
+
+    const countEls = document.querySelectorAll('[data-target]');
+    const countObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const target = parseInt(entry.target.dataset.target, 10);
+          if (target === 0) {
+            entry.target.textContent = '0';
+          } else {
+            countUp(entry.target, target, 1200);
+          }
+          countObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    countEls.forEach(el => countObserver.observe(el));
+  </script>
+</body>
+</html>

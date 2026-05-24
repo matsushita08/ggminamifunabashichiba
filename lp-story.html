@@ -170,11 +170,11 @@
       gap: 10px;
     }
     #site-header .logo-wrap img {
-      height: 32px;
+      height: 24px;
       width: auto;
     }
     #site-header .store-name {
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 700;
       color: var(--white);
       letter-spacing: 0.05em;
@@ -182,7 +182,7 @@
     }
     #site-header .store-name span {
       display: block;
-      font-size: 10px;
+      font-size: 9px;
       color: var(--sky);
       letter-spacing: 0.08em;
     }
@@ -214,7 +214,7 @@
       position: absolute;
       inset: 0;
       background:
-        url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80')
+        url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&q=85')
         center center / cover no-repeat;
       transform: scale(1.04);
       animation: hero-zoom 12s ease-out forwards;
@@ -226,12 +226,7 @@
     #hero .hero-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(
-        160deg,
-        rgba(26,110,158,0.55) 0%,
-        rgba(13,74,110,0.72) 60%,
-        rgba(13,74,110,0.88) 100%
-      );
+      background: linear-gradient(160deg, rgba(13,74,110,0.45) 0%, rgba(13,74,110,0.65) 60%, rgba(13,74,110,0.82) 100%);
     }
     #hero .hero-content {
       position: relative;
@@ -337,6 +332,74 @@
     @keyframes bounce {
       0%, 100% { transform: rotate(45deg) translateY(0); }
       50%       { transform: rotate(45deg) translateY(6px); }
+    }
+
+    /* ==============================
+       HERO PHOTO GRID
+    ============================== */
+    .hero-photo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px;
+      margin-bottom: 0;
+    }
+    .hero-photo-grid img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ==============================
+       PHOTO BREAK
+    ============================== */
+    .photo-break {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+    .photo-break img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+    }
+    .photo-caption {
+      position: absolute;
+      bottom: 12px;
+      right: 14px;
+      font-size: 10px;
+      color: rgba(255,255,255,0.8);
+      letter-spacing: 0.1em;
+      font-weight: 500;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+    }
+
+    /* ==============================
+       PHOTO MOSAIC
+    ============================== */
+    .photo-mosaic {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 3px;
+      width: 100%;
+    }
+    .mosaic-main img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      display: block;
+    }
+    .mosaic-sub {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .mosaic-sub img {
+      width: 100%;
+      height: 138px;
+      object-fit: cover;
+      display: block;
     }
 
     /* ==============================
@@ -541,15 +604,13 @@
       border-radius: 0 6px 6px 0;
     }
     .day-item .day-img {
-      margin-top: 14px;
+      margin-top: 16px;
       border-radius: 8px;
       overflow: hidden;
-      aspect-ratio: 16/9;
-      width: 100%;
     }
     .day-item .day-img img {
       width: 100%;
-      height: 100%;
+      height: 200px;
       object-fit: cover;
     }
 
@@ -557,7 +618,9 @@
        EXPERIENCE
     ============================== */
     #experience {
-      background: var(--ocean);
+      background:
+        linear-gradient(rgba(13,74,110,0.82), rgba(13,74,110,0.88)),
+        url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80') center/cover;
       padding: 80px 0;
     }
     #experience .section-label { color: var(--sky); }
@@ -934,7 +997,9 @@
        FINAL CTA
     ============================== */
     #final-cta {
-      background: linear-gradient(135deg, #0D4A6E 0%, #1A6E9E 60%, #4DB6E8 100%);
+      background:
+        linear-gradient(135deg, rgba(13,74,110,0.88) 0%, rgba(26,110,158,0.82) 100%),
+        url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80') center/cover;
       padding: 80px 0 100px;
       text-align: center;
     }
@@ -1075,6 +1140,16 @@
   </section>
 
   <!-- ==============================
+       HERO PHOTO GRID
+  ============================== -->
+  <div class="hero-photo-grid">
+    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&q=80" alt="Venice Beach" loading="lazy" />
+    <img src="https://images.unsplash.com/photo-1559521783-1d1599583485?w=400&q=80" alt="Muscle Beach" loading="lazy" />
+    <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=400&q=80" alt="Outdoor Gym" loading="lazy" />
+    <img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=400&q=80" alt="Training" loading="lazy" />
+  </div>
+
+  <!-- ==============================
        PROLOGUE
   ============================== -->
   <section id="prologue">
@@ -1118,6 +1193,14 @@
       </div>
     </div>
   </section>
+
+  <!-- ==============================
+       PHOTO BREAK (Prologue後)
+  ============================== -->
+  <div class="photo-break">
+    <img src="南船橋正面.jpeg" alt="Gold's Gym 南船橋千葉店" loading="lazy" />
+    <div class="photo-caption">Gold's Gym — Venice Beach, California, 1965</div>
+  </div>
 
   <!-- ==============================
        JOURNEY (DAY TIMELINE)
@@ -1348,6 +1431,19 @@
       </div>
     </div>
   </section>
+
+  <!-- ==============================
+       PHOTO MOSAIC (Experience後)
+  ============================== -->
+  <div class="photo-mosaic">
+    <div class="mosaic-main">
+      <img src="スタジオ.png" alt="ジムエリア" loading="lazy" />
+    </div>
+    <div class="mosaic-sub">
+      <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=400&q=80" alt="設備" loading="lazy" />
+      <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?w=400&q=80" alt="トレーニング" loading="lazy" />
+    </div>
+  </div>
 
   <!-- ==============================
        VOICES

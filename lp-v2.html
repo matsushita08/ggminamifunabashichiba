@@ -8,6 +8,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
+
+  <!-- ===== Microsoft Clarity ===== -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window,document,"clarity","script","YOUR_CLARITY_ID");
+  </script>
+
   <style>
     /* ===== RESET & BASE ===== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -2367,6 +2377,30 @@
       document.querySelector(`.worry-card[data-card="${idx}"]`).classList.add('active');
     });
   });
+
+  /* ===== Clarity カスタムイベント：CTAクリック計測 ===== */
+  document.querySelectorAll('a[href*="goldsgym-membership"]').forEach(function(el) {
+    el.addEventListener('click', function() {
+      var label = el.textContent.trim().slice(0, 30);
+      if (typeof clarity === 'function') {
+        clarity('event', 'cta_click');
+        clarity('set', 'cta_label', label);
+      }
+    });
+  });
+
+  /* ===== スクロール深度チェックポイント ===== */
+  var scrollMilestones = [25, 50, 75, 90, 100];
+  var reached = {};
+  window.addEventListener('scroll', function() {
+    var pct = Math.round((window.scrollY + window.innerHeight) / document.body.scrollHeight * 100);
+    scrollMilestones.forEach(function(m) {
+      if (pct >= m && !reached[m]) {
+        reached[m] = true;
+        if (typeof clarity === 'function') clarity('event', 'scroll_' + m);
+      }
+    });
+  }, { passive: true });
 </script>
 </body>
 </html>

@@ -9,14 +9,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
 
-  <!-- ===== Microsoft Clarity ===== -->
-  <!-- STEP: clarity.microsoft.com でプロジェクト作成後、YOUR_CLARITY_ID を置換 -->
-  <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window,document,"clarity","script","YOUR_CLARITY_ID");
+  <!-- ===== Google Analytics 4 ===== -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L4HYNBCDBQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-L4HYNBCDBQ');
   </script>
 
   <style>
@@ -2379,18 +2378,17 @@
     });
   });
 
-  /* ===== Clarity カスタムイベント：CTAクリック計測 ===== */
+  /* ===== GA4：CTAクリック計測 ===== */
   document.querySelectorAll('a[href*="goldsgym-membership"]').forEach(function(el) {
     el.addEventListener('click', function() {
-      var label = el.textContent.trim().slice(0, 30);
-      if (typeof clarity === 'function') {
-        clarity('event', 'cta_click');
-        clarity('set', 'cta_label', label);
-      }
+      gtag('event', 'cta_click', {
+        event_category: 'engagement',
+        event_label: el.textContent.trim().slice(0, 30)
+      });
     });
   });
 
-  /* ===== スクロール深度チェックポイント ===== */
+  /* ===== GA4：スクロール深度チェックポイント ===== */
   var scrollMilestones = [25, 50, 75, 90, 100];
   var reached = {};
   window.addEventListener('scroll', function() {
@@ -2398,7 +2396,7 @@
     scrollMilestones.forEach(function(m) {
       if (pct >= m && !reached[m]) {
         reached[m] = true;
-        if (typeof clarity === 'function') clarity('event', 'scroll_' + m);
+        gtag('event', 'scroll_depth', { depth: m });
       }
     });
   }, { passive: true });

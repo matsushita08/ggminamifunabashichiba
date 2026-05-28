@@ -1,0 +1,6 @@
+.vercel
+.DS_Store
+.wrangler/
+.netlify/
+.claude/
+検証スクリーンショット/

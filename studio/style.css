@@ -1,0 +1,829 @@
+/* ============================================================
+   GOLD'S GYM 南船橋千葉店 スタジオLP - スタイルシート
+   ============================================================ */
+
+/* ---- カラー変数 ---- */
+:root {
+  --black:       #111111;
+  --dark:        #1a1a1a;
+  --dark-2:      #222222;
+  --yellow:      #f5c400;
+  --yellow-dark: #d4a800;
+  --white:       #ffffff;
+  --gray-light:  #f4f4f2;
+  --gray:        #888888;
+  --gray-text:   #cccccc;
+  --red:         #cc2200;
+  --green:       #2d7d46;
+  --blue:        #1a4fa0;
+  --purple:      #6b3fa0;
+  --orange:      #c05a00;
+
+  --radius:      8px;
+  --radius-lg:   16px;
+  --shadow:      0 4px 20px rgba(0,0,0,.15);
+  --shadow-lg:   0 8px 40px rgba(0,0,0,.25);
+
+  --max-w:       1100px;
+  --section-pad: 80px 24px;
+}
+
+/* ---- リセット ---- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
+  background: var(--white);
+  color: var(--black);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; border: none; background: none; font: inherit; }
+
+/* ---- ユーティリティ ---- */
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 20px; }
+.text-white { color: var(--white) !important; }
+.text-gray  { color: var(--gray-text); }
+.text-center { text-align: center; }
+.sp-only { display: inline; }
+.pc-only { display: none; }
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.site-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: rgba(17,17,17,.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 2px solid var(--yellow);
+}
+.header-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.site-logo {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+}
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.nav-link {
+  color: var(--white);
+  font-size: .85rem;
+  font-weight: 500;
+  display: none;
+}
+
+/* ============================================================
+   ボタン共通
+   ============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 700;
+  border-radius: var(--radius);
+  transition: transform .15s, box-shadow .15s, opacity .15s;
+  text-align: center;
+  letter-spacing: .04em;
+  line-height: 1.3;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+.btn:active { transform: translateY(0); }
+
+.btn-sm  { padding: 8px 16px; font-size: .8rem; }
+.btn-lg  { padding: 16px 28px; font-size: 1rem; }
+.btn-xl  { padding: 20px 40px; font-size: 1.1rem; }
+.btn-floating { padding: 16px 24px; font-size: 1rem; width: 100%; }
+
+.btn-primary {
+  background: var(--yellow);
+  color: var(--black);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--yellow);
+  border: 2px solid var(--yellow);
+}
+.btn-outline:hover { background: rgba(245,196,0,.1); }
+.btn-outline-white {
+  background: transparent;
+  color: var(--white);
+  border: 2px solid var(--white);
+}
+.btn-outline-white:hover { background: rgba(255,255,255,.1); }
+.btn-yellow {
+  background: var(--yellow);
+  color: var(--black);
+}
+.btn-dark {
+  background: var(--black);
+  color: var(--white);
+}
+
+/* ============================================================
+   CTA グループ
+   ============================================================ */
+.cta-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 32px;
+}
+.cta-group-center { align-items: center; }
+.cta-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-top: 48px;
+}
+
+/* ============================================================
+   SECTION 共通
+   ============================================================ */
+.section { padding: var(--section-pad); }
+.section-dark { background: var(--dark); }
+.section-light { background: var(--gray-light); }
+.section-yellow { background: var(--yellow); }
+
+.section-label {
+  display: inline-block;
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--yellow);
+  border: 1px solid var(--yellow);
+  padding: 4px 12px;
+  border-radius: 100px;
+  margin-bottom: 16px;
+}
+.label-yellow { color: var(--yellow); border-color: var(--yellow); }
+
+.section-title {
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  font-weight: 900;
+  line-height: 1.4;
+  margin-bottom: 32px;
+  letter-spacing: -.01em;
+}
+.section-lead {
+  font-size: 1rem;
+  color: var(--gray);
+  margin-bottom: 40px;
+  margin-top: -20px;
+}
+.section-sub {
+  font-size: .8rem;
+  color: var(--gray);
+  margin-bottom: 32px;
+  margin-top: -20px;
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: flex-end;
+  padding-top: 60px;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+}
+/* ヒーロー画像: src を実際のスタジオレッスン写真に差し替えてください */
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,.2) 0%,
+    rgba(0,0,0,.4) 40%,
+    rgba(0,0,0,.85) 100%
+  );
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding-bottom: 60px;
+  padding-top: 40px;
+}
+.hero-eyebrow {
+  font-size: .75rem;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--yellow);
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.hero-title {
+  font-size: clamp(1.8rem, 6vw, 3rem);
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1.35;
+  margin-bottom: 24px;
+  letter-spacing: -.02em;
+}
+.hero-sub {
+  font-size: 1rem;
+  color: rgba(255,255,255,.9);
+  margin-bottom: 20px;
+  line-height: 1.9;
+}
+.hero-body {
+  font-size: .9rem;
+  color: rgba(255,255,255,.75);
+  margin-bottom: 28px;
+  line-height: 1.85;
+}
+.hero-price-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(245,196,0,.15);
+  border: 1px solid var(--yellow);
+  border-radius: var(--radius);
+  padding: 12px 20px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+.price-original { color: rgba(255,255,255,.55); font-size: .85rem; text-decoration: line-through; }
+.price-arrow { color: var(--yellow); font-weight: 700; }
+.price-campaign { color: var(--yellow); font-size: 1.6rem; font-weight: 900; }
+.price-label { color: rgba(255,255,255,.7); font-size: .8rem; }
+
+/* ============================================================
+   EMPATHY
+   ============================================================ */
+.empathy-list {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+.empathy-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: var(--gray-light);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  font-size: .95rem;
+  border-left: 4px solid var(--yellow);
+  animation: fadeInUp .5s ease both;
+}
+.empathy-item:nth-child(1) { animation-delay: .05s; }
+.empathy-item:nth-child(2) { animation-delay: .1s; }
+.empathy-item:nth-child(3) { animation-delay: .15s; }
+.empathy-item:nth-child(4) { animation-delay: .2s; }
+.empathy-item:nth-child(5) { animation-delay: .25s; }
+.empathy-item:nth-child(6) { animation-delay: .3s; }
+.empathy-item:nth-child(7) { animation-delay: .35s; }
+.empathy-icon { font-size: 1.4rem; flex-shrink: 0; }
+.empathy-message {
+  text-align: center;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  padding: 32px 24px;
+  background: var(--black);
+  color: var(--white);
+  border-radius: var(--radius-lg);
+}
+.empathy-message strong { color: var(--yellow); }
+
+/* ============================================================
+   VALUE CARDS
+   ============================================================ */
+.value-cards {
+  display: grid;
+  gap: 20px;
+}
+.value-card {
+  background: var(--dark-2);
+  border: 1px solid rgba(245,196,0,.2);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  transition: border-color .2s, transform .2s;
+}
+.value-card:hover {
+  border-color: var(--yellow);
+  transform: translateY(-4px);
+}
+.value-icon { font-size: 2rem; margin-bottom: 12px; }
+.value-card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--yellow);
+  margin-bottom: 10px;
+}
+.value-card-text { font-size: .9rem; color: var(--gray-text); line-height: 1.8; }
+
+/* ============================================================
+   EXPERIENCE
+   ============================================================ */
+.experience-visual {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 36px;
+  max-height: 400px;
+}
+/* 体験価値写真: src をインストラクター案内写真に差し替えてください */
+.experience-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+.experience-points { display: grid; gap: 24px; }
+.exp-point {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.exp-check {
+  width: 36px;
+  height: 36px;
+  background: var(--yellow);
+  color: var(--black);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+.exp-point h3 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
+.exp-point p  { font-size: .9rem; color: var(--gray); line-height: 1.7; }
+
+/* ============================================================
+   LIFESTYLE
+   ============================================================ */
+.lifestyle-grid {
+  display: grid;
+  gap: 16px;
+}
+.lifestyle-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 24px;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.lifestyle-num {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--yellow);
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+  width: 52px;
+  line-height: 1;
+}
+.lifestyle-item p { font-size: .95rem; line-height: 1.6; }
+.lifestyle-item strong { color: var(--black); font-weight: 700; }
+
+/* ============================================================
+   LESSON CARDS
+   ============================================================ */
+.lesson-cards {
+  display: grid;
+  gap: 20px;
+  margin-bottom: 8px;
+}
+.lesson-card {
+  background: var(--dark-2);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: var(--radius-lg);
+  padding: 24px 20px;
+  transition: border-color .2s;
+}
+.lesson-card:hover { border-color: rgba(245,196,0,.4); }
+.lesson-tag {
+  display: inline-block;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  background: var(--yellow);
+  color: var(--black);
+  padding: 3px 10px;
+  border-radius: 100px;
+  margin-bottom: 10px;
+}
+.tag-red    { background: var(--red); color: var(--white); }
+.tag-purple { background: var(--purple); color: var(--white); }
+.tag-green  { background: var(--green); color: var(--white); }
+.tag-orange { background: var(--orange); color: var(--white); }
+.tag-blue   { background: var(--blue); color: var(--white); }
+
+.lesson-name { font-size: 1.1rem; font-weight: 700; color: var(--white); margin-bottom: 10px; }
+.lesson-for  { font-size: .82rem; color: rgba(255,255,255,.5); margin-bottom: 8px; }
+.lesson-desc { font-size: .88rem; color: var(--gray-text); line-height: 1.75; margin-bottom: 12px; }
+.lesson-mood { font-size: .82rem; color: var(--yellow); font-weight: 500; }
+
+/* ============================================================
+   STORIES
+   ============================================================ */
+.story-cards { display: grid; gap: 32px; }
+.story-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(0,0,0,.06);
+}
+.story-photo {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  background: var(--gray-light);
+}
+/* 参加者写真: src をモデルケース写真に差し替えてください */
+.story-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+.story-content { padding: 24px 20px; }
+.story-profile {
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  color: var(--yellow-dark);
+  background: rgba(245,196,0,.1);
+  border: 1px solid rgba(245,196,0,.3);
+  display: inline-block;
+  padding: 3px 12px;
+  border-radius: 100px;
+  margin-bottom: 16px;
+}
+.story-label {
+  display: block;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-bottom: 4px;
+}
+.story-before, .story-trigger, .story-after {
+  margin-bottom: 12px;
+  font-size: .88rem;
+  line-height: 1.7;
+}
+.story-quote {
+  margin-top: 16px;
+  padding: 14px 18px;
+  background: var(--gray-light);
+  border-left: 4px solid var(--yellow);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: .92rem;
+  font-style: italic;
+  color: var(--dark);
+  font-weight: 500;
+}
+
+/* ============================================================
+   CTA MID (黄色帯)
+   ============================================================ */
+.cta-mid { padding: 60px 24px; }
+.cta-mid-title {
+  font-size: clamp(1.3rem, 4vw, 1.8rem);
+  font-weight: 900;
+  color: var(--black);
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+.cta-price-badge {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+.price-original-sm { font-size: .85rem; text-decoration: line-through; color: rgba(0,0,0,.4); }
+.price-campaign-lg { font-size: 2.2rem; font-weight: 900; color: var(--black); }
+.price-label-sm { font-size: .8rem; color: rgba(0,0,0,.55); }
+
+/* ============================================================
+   SAFETY
+   ============================================================ */
+.safety-visual {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 40px;
+  max-height: 320px;
+}
+/* 安心材料写真: src を参加者写真に差し替えてください */
+.safety-img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+.safety-list {
+  display: grid;
+  gap: 16px;
+}
+.safety-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 20px;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.safety-icon { font-size: 1.8rem; flex-shrink: 0; }
+.safety-item h3 { font-size: .95rem; font-weight: 700; margin-bottom: 4px; }
+.safety-item p  { font-size: .85rem; color: var(--gray); line-height: 1.65; }
+
+/* ============================================================
+   HOW TO (STEPS)
+   ============================================================ */
+.steps { display: grid; gap: 40px; margin-bottom: 8px; }
+.step {}
+.step-num {
+  font-size: .7rem;
+  font-weight: 900;
+  letter-spacing: .12em;
+  color: var(--yellow);
+  border: 1px solid var(--yellow);
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 100px;
+  margin-bottom: 16px;
+}
+.step-content {
+  background: var(--dark-2);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.06);
+}
+.step-photo {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: var(--dark);
+  position: relative;
+}
+/* STEP写真: 各stepの src をあとで差し替えてください (コメント参照) */
+.step-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: .75;
+}
+.step-photo-note {
+  position: absolute;
+  bottom: 8px;
+  left: 12px;
+  font-size: .65rem;
+  color: rgba(255,255,255,.5);
+  background: rgba(0,0,0,.5);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+.step-text { padding: 24px 20px; }
+.step-text h3 { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+.step-text p  { font-size: .88rem; color: var(--gray-text); line-height: 1.75; }
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.faq-list { display: grid; gap: 2px; }
+.faq-item { border-bottom: 1px solid rgba(0,0,0,.08); }
+.faq-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 0;
+  font-size: .95rem;
+  font-weight: 500;
+  text-align: left;
+  color: var(--black);
+  transition: color .15s;
+}
+.faq-question:hover { color: var(--yellow-dark); }
+.faq-question[aria-expanded="true"] { color: var(--yellow-dark); font-weight: 700; }
+.faq-question[aria-expanded="true"] .faq-icon { transform: rotate(45deg); color: var(--yellow-dark); }
+.faq-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  transition: transform .25s;
+  color: var(--yellow);
+}
+.faq-answer {
+  padding-bottom: 20px;
+  font-size: .9rem;
+  line-height: 1.8;
+  color: var(--gray);
+}
+.faq-answer[hidden] { display: none; }
+
+/* ============================================================
+   FINAL CTA
+   ============================================================ */
+.final-cta-body {
+  font-size: .95rem;
+  line-height: 2;
+  margin-bottom: 32px;
+}
+.final-cta-visual {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 40px;
+  max-height: 320px;
+}
+/* 最終CTA写真: src をレッスン後達成感写真に差し替えてください */
+.final-cta-visual img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+.final-price-block {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.final-price-text {
+  font-size: .8rem;
+  letter-spacing: .1em;
+  color: var(--gray-text);
+  margin-bottom: 8px;
+}
+.final-price-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.price-strike { text-decoration: line-through; color: var(--gray); font-size: .9rem; }
+.final-price-big { font-size: 3rem; font-weight: 900; color: var(--yellow); line-height: 1; }
+.final-price-tax { font-size: .8rem; color: var(--gray); }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer {
+  background: #0a0a0a;
+  border-top: 1px solid rgba(255,255,255,.06);
+  padding: 48px 24px 120px;
+  text-align: center;
+}
+.footer-logo {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+  margin: 0 auto 20px;
+  opacity: .7;
+}
+.footer-info {
+  font-size: .82rem;
+  color: rgba(255,255,255,.45);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+.footer-info strong { color: rgba(255,255,255,.7); }
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 20px;
+  margin-bottom: 24px;
+}
+.footer-nav a {
+  font-size: .8rem;
+  color: rgba(255,255,255,.45);
+  transition: color .15s;
+}
+.footer-nav a:hover { color: var(--yellow); }
+.footer-copy {
+  font-size: .72rem;
+  color: rgba(255,255,255,.25);
+}
+
+/* ============================================================
+   FLOATING CTA (モバイル用)
+   ============================================================ */
+.floating-cta {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 900;
+  padding: 12px 16px;
+  background: rgba(17,17,17,.95);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(245,196,0,.3);
+  transform: translateY(100%);
+  transition: transform .3s ease;
+}
+.floating-cta.visible { transform: translateY(0); }
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================================
+   RESPONSIVE — TABLET (600px+)
+   ============================================================ */
+@media (min-width: 600px) {
+  .value-cards  { grid-template-columns: 1fr 1fr; }
+  .lesson-cards { grid-template-columns: 1fr 1fr; }
+  .safety-list  { grid-template-columns: 1fr 1fr; }
+  .story-cards  { grid-template-columns: 1fr 1fr; }
+  .lifestyle-grid { grid-template-columns: 1fr 1fr; }
+
+  .cta-group { flex-direction: row; flex-wrap: wrap; }
+
+  .step-content {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+  }
+  .step-photo { height: 100%; min-height: 180px; }
+}
+
+/* ============================================================
+   RESPONSIVE — PC (900px+)
+   ============================================================ */
+@media (min-width: 900px) {
+  :root { --section-pad: 100px 40px; }
+
+  .sp-only { display: none; }
+  .pc-only { display: inline; }
+
+  .nav-link { display: inline; }
+
+  .hero-title { font-size: 3.2rem; }
+  .hero-content { padding-bottom: 80px; }
+
+  .value-cards  { grid-template-columns: repeat(4, 1fr); }
+  .lesson-cards { grid-template-columns: repeat(3, 1fr); }
+  .safety-list  { grid-template-columns: repeat(3, 1fr); }
+  .story-cards  { grid-template-columns: repeat(3, 1fr); }
+  .lifestyle-grid { grid-template-columns: repeat(5, 1fr); }
+
+  .steps { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .step-content {
+    display: block;
+  }
+  .step-photo { height: 220px; }
+
+  .empathy-list { grid-template-columns: 1fr 1fr; }
+
+  .experience-img { height: 420px; }
+
+  .cta-group { flex-direction: row; }
+
+  .floating-cta { display: none; }
+}
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
